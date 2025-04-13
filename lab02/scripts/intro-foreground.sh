@@ -38,6 +38,6 @@ cd /home/cassandra-user
 export PS1="\w \$ "
 EOF
 
-chown cassandra:cassandra-user /home/cassandra-user/.bash_profile
+chown cassandra-user:cassandra /home/cassandra-user/.bash_profile
 
 su - cassandra-user
