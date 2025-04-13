@@ -38,5 +38,4 @@ su - cassandra-user -c '
   export PATH="/home/cassandra-user/cassandra/bin:$PATH"
   export PS1="\w \$ "
   cd /home/cassandra-user
-  bash
 '
