@@ -35,4 +35,4 @@ echo 'export PATH="/home/cassandra-user/cassandra/bin:$PATH"' >> /home/cassandra
 echo 'export PS1="\w \$ "' >> /home/cassandra-user/.bashrc
 
 # Launch interactive shell as cassandra-user
-su - cassandra-user
+su -iu cassandra-user
