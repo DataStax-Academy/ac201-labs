@@ -18,7 +18,7 @@ echo " ██╔══██║██║     ██╔══██║██║  
 echo " ██║  ██║╚██████╗██║  ██║██████╔╝███████╗██║ ╚═╝ ██║   ██║       "  > /dev/tty 2>&1 
 echo " ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝     ╚═╝   ╚═╝       "  > /dev/tty 2>&1  
 
-echo -ne "\n\n Configuring the lab envronment " > /dev/tty 2>&1
+echo -ne "\n\n Configuring the lab environment " > /dev/tty 2>&1
 
 until /home/cassandra-user/cassandra/bin/cqlsh -e "DESCRIBE KEYSPACES;" > /dev/null 2>&1
 do
