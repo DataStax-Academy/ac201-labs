@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "startup.sh" 
+echo "startup.sh" > /root/foo.txt
