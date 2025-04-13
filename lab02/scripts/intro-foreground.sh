@@ -20,7 +20,7 @@ echo " ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══�
 
 echo -ne "\n\n Configuring the lab envronment " > /dev/tty 2>&1
 
-until [[ -e /usr/lib/jvm && -e /usr/bin/java ]]
+until [[ -e /home/cassandra-user/cassandra ]]
 do
      sleep 1
      echo -n '.' > /dev/tty 2>&1
