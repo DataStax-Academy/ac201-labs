@@ -3,6 +3,14 @@
 groupadd cassandra
 useradd -m -s /bin/bash -g cassandra cassandra-user
 
+cat <<'EOF' > /home/cassandra-user/.bash_profile
+export PATH="/home/cassandra-user/cassandra/bin:$PATH"
+cd /home/cassandra-user
+export PS1="\w \$ "
+EOF
+
+chown cassandra-user:cassandra /home/cassandra-user/.bash_profile
+
 apt-get update
 
 sudo apt-get install -y openjdk-11-jdk-headless < /dev/null > /dev/null 
