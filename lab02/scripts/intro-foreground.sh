@@ -26,6 +26,9 @@ do
      echo -n '.' > /dev/tty 2>&1
 done
 
+su cassandra-user
+cd /home/cassandra-user
+
 echo -e "\n\n" > /dev/tty 2>&1
 echo -e " Lab environment ready!\n\n" > /dev/tty 2>&1
 echo -e " Click \033[1mSTART\033[0m to continue." > /dev/tty 2>&1
