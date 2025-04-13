@@ -27,20 +27,12 @@ sudo ln -sf /opt/python3.11/bin/python3.11 /usr/bin/python
 sudo ln -sf /opt/python3.11/bin/pip3.11 /usr/bin/pip
 sudo ln -sf /usr/local/bin/python3.11 /usr/bin/python3
 
-# EXPORT PATH="/home/cassandra-user/cassandra/bin:$PATH"
-
-su cassandra-user 
-cd /home/cassandra-user
-
-curl https://dlcdn.apache.org/cassandra/5.0.4/apache-cassandra-5.0.4-bin.tar.gz \
-        --output apache-cassandra-5.0.4-bin.tar.gz
-
-tar xf apache-cassandra-5.0.4-bin.tar.gz
-
-rm apache-cassandra-5.0.4-bin.tar.gz
-
-mv apache-cassandra-5.0.4 cassandra
-
-cd cassandra/bin
-
-nohup ./cassandra -R > /tmp/cassandra.log 2>&1 &
+su - cassandra-user -c '
+  cd ~
+  wget https://downloads.apache.org/cassandra/5.0.4/apache-cassandra-5.0.4-bin.tar.gz
+  tar -xzf apache-cassandra-5.0.4-bin.tar.gz
+  mv apache-cassandra-5.0.4 cassandra
+'
+su - cassandra-user -c '
+  nohup ~/cassandra/bin/cassandra -R > ~/cassandra.log 2>&1 &
+'
