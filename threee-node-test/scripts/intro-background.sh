@@ -37,6 +37,9 @@ su - cassandra-user -c '
   cp -r nodeA nodeC
 '
 su - cassandra-user -c '
+  mkdir -p ~/logs/nodeA
+  mkdir -p ~/logs/nodeB
+  mkdir -p ~/logs/nodeC
   nohup ~/nodeA/bin/cassandra -R > ~/logs/nodeA/cassandra.log 2>&1 &
   nohup ~/nodeB/bin/cassandra -R > ~/logs/nodeB/cassandra.log 2>&1 &
   nohup ~/nodeC/bin/cassandra -R > ~/logs/nodeC/cassandra.log 2>&1 &
