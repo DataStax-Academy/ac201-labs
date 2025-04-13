@@ -27,8 +27,7 @@ do
 done
 
 echo -e "\n\n" > /dev/tty 2>&1
-echo -e " Lab environment ready!\n\n" > /dev/tty 2>&1
-echo -e " Click \033[1mSTART\033[0m to continue." > /dev/tty 2>&1
+echo -e " \033[1mLab environment ready!\033[0m\n\n" > /dev/tty 2>&1
 echo -e "\n" > /dev/tty 2>&1
 
 PS1="\w $ "
