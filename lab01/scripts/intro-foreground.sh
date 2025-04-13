@@ -27,7 +27,7 @@ do
 done
 
 echo -e "\n\n" > /dev/tty 2>&1
-echo -e " \033[1mLab environment ready!\033[0m" > /dev/tty 2>&1
+echo -e " \e[1mLab environment ready!\e[0m" > /dev/tty 2>&1
 echo -e "\n" > /dev/tty 2>&1
 
 PS1="\w $ "
