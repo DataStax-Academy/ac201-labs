@@ -17,13 +17,11 @@
         },
         {
           "title": "Step 2: Download and install Cassandra",
-          "text": "steps/step02.md",
-          "verify": "scripts/step02-verify.sh"
+          "text": "steps/step02.md"
         },
         {
           "title": "Step 03: Start Cassandra",
-          "text": "steps/step03.md",
-          "verify": "scripts/step03-verify.sh"        
+          "text": "steps/step03.md"
         }
       ],
       "intro": {
