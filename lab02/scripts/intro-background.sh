@@ -21,4 +21,4 @@ mv apache-cassandra-5.0.4 cassandra
 
 cd cassandra/bin
 
-nohup cassandra -R > /tmp/cassandra.log 2>&1 &
+nohup ./cassandra -R > /tmp/cassandra.log 2>&1 &
