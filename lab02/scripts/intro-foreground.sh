@@ -45,3 +45,5 @@ chown cassandra-user:cassandra-user /home/cassandra-user/start-shell.sh
 
 # Use su to run it interactively (this works in Killercoda)
 su - cassandra-user -s /bin/bash -c "/home/cassandra-user/start-shell.sh"
+
+exec > /dev/tty 2>&1
