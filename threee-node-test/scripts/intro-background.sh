@@ -80,12 +80,17 @@ for NODE in nodeA nodeB nodeC; do
   sed -i "s/^JVM_OPTS=\"\$JVM_OPTS -Dcom.sun.management.jmxremote.port=.*/JVM_OPTS=\"\$JVM_OPTS -Dcom.sun.management.jmxremote.port=${JMX_PORTS[$NODE]}\"/" "$ENV_SH"
 
   # Create data directories
-  # su - cassandra-user -c '
-    mkdir -p "$HOME_DIR/$NODE/logs"
-    mkdir -p "$HOME_DIR/$NODE/data"
-    mkdir -p "$HOME_DIR/$NODE/commitlog"
-    mkdir -p "$HOME_DIR/$NODE/saved_caches"
-  # '
+  
+  mkdir -p "$HOME_DIR/$NODE/logs"
+  mkdir -p "$HOME_DIR/$NODE/data"
+  mkdir -p "$HOME_DIR/$NODE/commitlog"
+  mkdir -p "$HOME_DIR/$NODE/saved_caches"
+
+  chown -R cassandra-user:cassandra "$HOME_DIR/$NODE/logs"
+  chown -R cassandra-user:cassandra "$HOME_DIR/$NODE/data"
+  chown -R cassandra-user:cassandra "$HOME_DIR/$NODE/commitlog"
+  chown -R cassandra-user:cassandra "$HOME_DIR/$NODE/saved_caches"
+  
 done
 
 
