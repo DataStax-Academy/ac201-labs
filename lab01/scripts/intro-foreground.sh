@@ -33,3 +33,10 @@ echo -e "\n" > /dev/tty 2>&1
 PS1="\w $ "
 
 exec > /dev/tty 2>&1
+
+su - cassandra-user -c '
+  export PATH="/home/cassandra-user/cassandra/bin:$PATH"
+  export PS1="\w \$ "
+  cd /home/cassandra-user
+  bash
+'
