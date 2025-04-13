@@ -10,8 +10,8 @@ In this lab we will install Cassandra from a Tarball.
 
 ✅ Download the Cassandra tarball from an Apache CDN:
 ```
-curl https://dlcdn.apache.org/cassandra/5.0-beta1/apache-cassandra-5.0-beta1-bin.tar.gz \
-        --output apache-cassandra-5.0-beta1-bin.tar.gz
+curl https://dlcdn.apache.org/cassandra/5.0.4/apache-cassandra-5.0.4-bin.tar.gz \
+        --output apache-cassandra-5.0.4-bin.tar.gz
 ```{{exec}}
 
 ✅ View the downloaded tarball:
@@ -21,17 +21,17 @@ ls -l
 
 ✅ Extract the tarball:
 ```
-tar xf apache-cassandra-5.0-beta1-bin.tar.gz
+tar xf apache-cassandra-5.0.4-bin.tar.gz
 ```{{exec}}
 
 ✅ Delete the tarball.
 ```
-rm apache-cassandra-5.0-beta1-bin.tar.gz
+rm apache-cassandra-5.0.4-bin.tar.gz
 ```{{exec}}
 
 ✅ Rename the directory.
 ```
-mv apache-cassandra-5.0-beta1 cassandra
+mv apache-cassandra-5.0.4 cassandra
 ```{{exec}}
 
 ✅ View the directory.
