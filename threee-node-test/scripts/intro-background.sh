@@ -51,12 +51,13 @@ declare -A NATIVE_PORTS=( [nodeA]=9042 [nodeB]=9043 [nodeC]=9044 )
 declare -A JMX_PORTS=( [nodeA]=7199 [nodeB]=7200 [nodeC]=7201 )
 
 # Common settings
-CLUSTER_NAME="Test Cluster"
+HOME_DIR="/home/cassandra-user"
+CLUSTER_NAME="Academy Cluster"
 SEED_IP="127.0.0.1"  # NodeA is the seed
 
 for NODE in nodeA nodeB nodeC; do
 
-  CONF_DIR="$HOME/$NODE/conf"
+  CONF_DIR="$HOME_DIR/$NODE/conf"
   YAML="$CONF_DIR/cassandra.yaml"
   ENV_SH="$CONF_DIR/cassandra-env.sh"
 
@@ -79,7 +80,7 @@ for NODE in nodeA nodeB nodeC; do
   sed -i "s/^JVM_OPTS=\"\$JVM_OPTS -Dcom.sun.management.jmxremote.port=.*/JVM_OPTS=\"\$JVM_OPTS -Dcom.sun.management.jmxremote.port=${JMX_PORTS[$NODE]}\"/" "$ENV_SH"
 
   # Create data directories
-  mkdir -p "$HOME/$NODE/data" "$HOME/$NODE/commitlog" "$HOME/$NODE/saved_caches"
+  mkdir -p "$HOME_DIR/$NODE/data" "$HOME_DIR/$NODE/commitlog" "$HOME_DIR/$NODE/saved_caches"
 done
 
 #
