@@ -32,15 +32,12 @@ echo -e "\n" > /dev/tty 2>&1
 
 exec > /dev/tty 2>&1
 
-# Set environment for cassandra-user
 cat <<'EOF' > /home/cassandra-user/.bash_profile
 export PATH="/home/cassandra-user/cassandra/bin:$PATH"
 cd /home/cassandra-user
 export PS1="\w \$ "
 EOF
 
-# Ensure ownership and executable shell
-chown cassandra-user:cassandra-user /home/cassandra-user/.bash_profile
+chown cassandra:cassandra-user /home/cassandra-user/.bash_profile
 
-# Launch interactive login shell as cassandra-user
 su - cassandra-user
