@@ -93,7 +93,6 @@ for NODE in nodeA nodeB nodeC; do
   
 done
 
-
 #
 # Start the nodes in the background
 #
