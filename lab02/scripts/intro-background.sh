@@ -8,10 +8,19 @@ apt-get update
 sudo apt-get install -y openjdk-11-jdk-headless < /dev/null > /dev/null 
 
 # Downgrade Python to v3.11
-# sudo apt remove python3.12
-# sudo apt install python3.11 python3.11-venv python3.11-distutils
-# sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1
-# sudo update-alternatives --config python3
+# Download prebuilt Python 3.11 binary from GitHub release
+wget https://github.com/indygreg/python-build-standalone/releases/download/20240107/cpython-3.11.7+20240107-x86_64-unknown-linux-gnu-install_only.tar.gz
+
+# Extract it
+mkdir -p /opt/python3.11
+tar -xzf cpython-3.11.7+20240107-x86_64-unknown-linux-gnu-install_only.tar.gz -C /opt/python3.11 --strip-components=1
+
+# sudo ln -sf /opt/python3.11/bin/python /usr/bin/python
+
+
+# # Optionally symlink it
+# ln -s /opt/python3.11/bin/python /usr/local/bin/python3.11
+# ln -s /opt/python3.11/bin/pip /usr/local/bin/pip3.11
 
 su cassandra-user 
 cd /home/cassandra-user
