@@ -15,12 +15,8 @@ wget https://github.com/indygreg/python-build-standalone/releases/download/20240
 mkdir -p /opt/python3.11
 tar -xzf cpython-3.11.7+20240107-x86_64-unknown-linux-gnu-install_only.tar.gz -C /opt/python3.11 --strip-components=1
 
-# sudo ln -sf /opt/python3.11/bin/python /usr/bin/python
+sudo ln -sf /opt/python3.11/bin/python3.11  /usr/bin/python
 
-
-# # Optionally symlink it
-# ln -s /opt/python3.11/bin/python /usr/local/bin/python3.11
-# ln -s /opt/python3.11/bin/pip /usr/local/bin/pip3.11
 
 su cassandra-user 
 cd /home/cassandra-user
