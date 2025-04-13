@@ -7,6 +7,12 @@ apt-get update
 
 sudo apt-get install -y openjdk-11-jdk-headless < /dev/null > /dev/null 
 
+# Downgrade Python to v3.11
+sudo apt remove python3.12
+sudo apt install python3.11 python3.11-venv python3.11-distutils
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1
+sudo update-alternatives --config python3
+
 su cassandra-user 
 cd /home/cassandra-user
 
