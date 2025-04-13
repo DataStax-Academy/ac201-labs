@@ -15,7 +15,6 @@ tar xf apache-cassandra-5.0.4-bin.tar.gz
 rm apache-cassandra-5.0.4-bin.tar.gz
 mv apache-cassandra-5.0.4 cassandra
 cd cassandra/bin
-./cassandra > /dev/null 2>&1 &
 
 
 
