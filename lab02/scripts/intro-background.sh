@@ -31,8 +31,9 @@ su - cassandra-user -c '
   cd ~
   wget https://downloads.apache.org/cassandra/5.0.4/apache-cassandra-5.0.4-bin.tar.gz
   tar -xzf apache-cassandra-5.0.4-bin.tar.gz
+  rm apache-cassandra-5.0.4-bin.tar.gz
   mv apache-cassandra-5.0.4 cassandra
 '
 su - cassandra-user -c '
-  nohup ~/cassandra/bin/cassandra -R > ~/cassandra.log 2>&1 &
+  nohup ~/cassandra/bin/cassandra -R > ~/logs/cassandra.log 2>&1 &
 '

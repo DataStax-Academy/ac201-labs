@@ -31,8 +31,13 @@ su - cassandra-user -c '
   cd ~
   wget https://downloads.apache.org/cassandra/5.0.4/apache-cassandra-5.0.4-bin.tar.gz
   tar -xzf apache-cassandra-5.0.4-bin.tar.gz
-  mv apache-cassandra-5.0.4 cassandra
+  rm apache-cassandra-5.0.4-bin.tar.gz
+  mv apache-cassandra-5.0.4 nodeA
+  cp -r nodeA nodeB
+  cp -r nodeA nodeC
 '
 su - cassandra-user -c '
-  nohup ~/cassandra/bin/cassandra -R > ~/cassandra.log 2>&1 &
+  nohup ~/nodeA/bin/cassandra -R > ~/logs/nodeA/cassandra.log 2>&1 &
+  nohup ~/nodeB/bin/cassandra -R > ~/logs/nodeB/cassandra.log 2>&1 &
+  nohup ~/nodeC/bin/cassandra -R > ~/logs/nodeC/cassandra.log 2>&1 &
 '
