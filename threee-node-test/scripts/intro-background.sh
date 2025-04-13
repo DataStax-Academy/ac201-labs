@@ -80,17 +80,20 @@ for NODE in nodeA nodeB nodeC; do
   sed -i "s/^JVM_OPTS=\"\$JVM_OPTS -Dcom.sun.management.jmxremote.port=.*/JVM_OPTS=\"\$JVM_OPTS -Dcom.sun.management.jmxremote.port=${JMX_PORTS[$NODE]}\"/" "$ENV_SH"
 
   # Create data directories
-  mkdir -p "$HOME_DIR/$NODE/data" "$HOME_DIR/$NODE/commitlog" "$HOME_DIR/$NODE/saved_caches"
+  su - cassandra-user -c '
+    mkdir -p "$HOME_DIR/$NODE/logs"
+    mkdir -p "$HOME_DIR/$NODE/data"
+    mkdir -p "$HOME_DIR/$NODE/commitlog"
+    mkdir -p "$HOME_DIR/$NODE/saved_caches"
+  '
 done
+
 
 #
 # Start the nodes in the background
 #
 
 su - cassandra-user -c '
-  mkdir -p ~/nodeA/logs
-  mkdir -p ~/nodeB/logs
-  mkdir -p ~/nodeC/logs
   nohup ~/nodeA/bin/cassandra -R > ~/nodeA/logs/cassandra.log 2>&1 &
   nohup ~/nodeB/bin/cassandra -R > ~/nodeB/logs/cassandra.log 2>&1 &
   nohup ~/nodeC/bin/cassandra -R > ~/nodeC/logs/cassandra.log 2>&1 &
