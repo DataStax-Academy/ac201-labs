@@ -20,11 +20,11 @@ echo " ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══�
 
 echo -ne "\n\n Configuring the lab envronment " > /dev/tty 2>&1
 
-# until cqlsh -e "DESCRIBE KEYSPACES;" > /dev/null 2>&1;
-# do
-#      sleep 1
-#      echo -n '.' > /dev/tty 2>&1
-# done
+until /home/cassanda-user/cassandra/bin/cqlsh -e "DESCRIBE KEYSPACES;" > /dev/null 2>&1;
+do
+     sleep 1
+     echo -n '.' > /dev/tty 2>&1
+done
 
 echo -e "\n\n" > /dev/tty 2>&1
 echo -e " Lab environment ready!\n\n" > /dev/tty 2>&1
