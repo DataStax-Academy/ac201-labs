@@ -33,5 +33,3 @@ echo -e "\n" > /dev/tty 2>&1
 PS1="\w $ "
 
 exec > /dev/tty 2>&1
-
-su cassandra-user 
