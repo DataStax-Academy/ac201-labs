@@ -30,8 +30,6 @@ echo -e "\n\n" > /dev/tty 2>&1
 echo -e " Lab environment ready!\n\n" > /dev/tty 2>&1
 echo -e "\n" > /dev/tty 2>&1
 
-exec > /dev/null 2>&1
-
 EXPORT PATH="/home/cassandra-user/cassandra/bin:$PATH"
 
 su cassandra-user 
