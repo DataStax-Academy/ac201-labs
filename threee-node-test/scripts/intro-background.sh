@@ -88,10 +88,10 @@ done
 #
 
 su - cassandra-user -c '
-  mkdir -p ~/logs/nodeA
-  mkdir -p ~/logs/nodeB
-  mkdir -p ~/logs/nodeC
-  nohup ~/nodeA/bin/cassandra -R > ~/logs/nodeA/cassandra.log 2>&1 &
-  nohup ~/nodeB/bin/cassandra -R > ~/logs/nodeB/cassandra.log 2>&1 &
-  nohup ~/nodeC/bin/cassandra -R > ~/logs/nodeC/cassandra.log 2>&1 &
+  # mkdir -p ~/logs/nodeA
+  # mkdir -p ~/logs/nodeB
+  # mkdir -p ~/logs/nodeC
+  nohup ~/nodeA/bin/cassandra -R > ~/nodeA/logs/cassandra.log 2>&1 &
+  nohup ~/nodeB/bin/cassandra -R > ~/nodeB/logs/cassandra.log 2>&1 &
+  nohup ~/nodeC/bin/cassandra -R > ~/nodeC/logs/cassandra.log 2>&1 &
 '
