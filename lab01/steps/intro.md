@@ -5,4 +5,8 @@ In this hands-on lab, you will:
 - Start Cassandra
 - Verify that Cassandra is up and running
 
-⚠️ **Warning:** Wait until you see the<br> *Lab environment ready!* <br>message before you click start
+<div style="border: 2px solid orange; background-color: #fff3cd; padding: 16px; width: fit-content; margin: 20px auto; text-align: center; border-radius: 6px;">
+
+⚠️ <strong>Warning:</strong><br>
+Make sure to back up your data before proceeding.
+</div>
