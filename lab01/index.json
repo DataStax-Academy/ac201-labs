@@ -13,8 +13,7 @@
       "steps": [
         {
           "title": "Step 1: Configure the environment",
-          "text": "steps/step01.md",
-          "verify": "scripts/step01-verify.sh"
+          "text": "steps/step01.md"
         },
         {
           "title": "Step 2: Download and install Cassandra",
