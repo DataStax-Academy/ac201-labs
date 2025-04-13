@@ -1,7 +1,7 @@
 {
     "private": false,
-    "title": "AC201 Lab 02: Gossip",
-    "description": "Observe the gossip protocol in action",
+    "title": "3 Node Test",
+    "description": "Three node Cassandra cluster",
     "difficulty": "Beginner",
     "time": "3 minutes",
     "details": {
