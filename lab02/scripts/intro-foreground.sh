@@ -30,10 +30,9 @@ echo -e "\n\n" > /dev/tty 2>&1
 echo -e " Lab environment ready!" > /dev/tty 2>&1
 echo -e "\n" > /dev/tty 2>&1
 
-# Start an interactive shell as cassandra-user
-su - cassandra-user -c '
-  export PATH="/home/cassandra-user/cassandra/bin:$PATH"
-  export PS1="\w \$ "
-  cd /home/cassandra-user
-'
+# Ensure PATH is set before switching users
+echo 'export PATH="/home/cassandra-user/cassandra/bin:$PATH"' >> /home/cassandra-user/.bashrc
+echo 'export PS1="\w \$ "' >> /home/cassandra-user/.bashrc
 
+# Launch interactive shell as cassandra-user
+su - cassandra-user
