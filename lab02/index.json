@@ -1,9 +1,9 @@
 {
     "private": false,
     "title": "AC201 Lab 02: Gossip",
-    "description": "Get started with Apache Cassandra™",
+    "description": "Observe the gossip protocol in action",
     "difficulty": "Beginner",
-    "time": "10 minutes",
+    "time": "3 minutes",
     "details": {
       "assets": {
         "host01": [
