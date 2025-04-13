@@ -1,6 +1,6 @@
 {
     "private": false,
-    "title": "AC201 Lab 01: Installation",
+    "title": "AC201 Lab 02: Gossip",
     "description": "Get started with Apache Cassandra™",
     "difficulty": "Beginner",
     "time": "10 minutes",
