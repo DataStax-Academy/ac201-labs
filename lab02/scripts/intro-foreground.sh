@@ -32,12 +32,4 @@ echo -e "\n" > /dev/tty 2>&1
 
 exec > /dev/tty 2>&1
 
-cat <<'EOF' > /home/cassandra-user/.bash_profile
-export PATH="/home/cassandra-user/cassandra/bin:$PATH"
-cd /home/cassandra-user
-export PS1="\w \$ "
-EOF
-
-chown cassandra-user:cassandra /home/cassandra-user/.bash_profile
-
 su - cassandra-user
