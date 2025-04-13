@@ -35,5 +35,6 @@ su - cassandra-user -c '
   mv apache-cassandra-5.0.4 cassandra
 '
 su - cassandra-user -c '
+  mkdir -p ~/logs
   nohup ~/cassandra/bin/cassandra -R > ~/logs/cassandra.log 2>&1 &
 '
