@@ -32,4 +32,9 @@ echo -e "\n" > /dev/tty 2>&1
 
 exec > /dev/tty 2>&1
 
+exec > /dev/null 2>&1
 su cassandra-user
+export PS1="\w $ "
+export $PATH="/home/cassandra-user/cassandra/bin:$PATH"
+cd /home/cassandra-user
+exec > /dev/tty 2>&1
