@@ -88,9 +88,9 @@ done
 #
 
 su - cassandra-user -c '
-  # mkdir -p ~/logs/nodeA
-  # mkdir -p ~/logs/nodeB
-  # mkdir -p ~/logs/nodeC
+  mkdir -p ~/nodeA/logs
+  mkdir -p ~/nodeB/logs
+  mkdir -p ~/nodeC/logs
   nohup ~/nodeA/bin/cassandra -R > ~/nodeA/logs/cassandra.log 2>&1 &
   nohup ~/nodeB/bin/cassandra -R > ~/nodeB/logs/cassandra.log 2>&1 &
   nohup ~/nodeC/bin/cassandra -R > ~/nodeC/logs/cassandra.log 2>&1 &
