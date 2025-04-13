@@ -32,4 +32,6 @@ echo -e "\n" > /dev/tty 2>&1
 
 PS1="\w $ "
 
+su cassandra-user -c "export PS1='\w $ '; /bin/bash --noprofile --norc" 2>&1
+
 exec > /dev/tty 2>&1
