@@ -27,7 +27,7 @@
     },
     "assets": {
       "host01": [
-        {"file": "pom.xml", "target": "/home/cassandra-user/working-java", "chmod": "+r"}
+        {"file": "pom.xml", "target": "/tmp/assets", "chmod": "+r"}
       ]
     },
     "environment": {
