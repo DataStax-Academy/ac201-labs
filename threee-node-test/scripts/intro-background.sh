@@ -97,12 +97,12 @@ done
 # Start the nodes in the background
 #
 
-su - cassandra-user -c '
-  nohup ~/nodeA/bin/cassandra -R > ~/nodeA/logs/cassandra.log 2>&1 &
-'
-su - cassandra-user -c '
-  nohup ~/nodeB/bin/cassandra -R > ~/nodeB/logs/cassandra.log 2>&1 &
-'
-su - cassandra-user -c '
-  nohup ~/nodeC/bin/cassandra -R > ~/nodeC/logs/cassandra.log 2>&1 &
-'
+# su - cassandra-user -c '
+#   nohup ~/nodeA/bin/cassandra -R > ~/nodeA/logs/cassandra.log 2>&1 &
+# '
+# su - cassandra-user -c '
+#   nohup ~/nodeB/bin/cassandra -R > ~/nodeB/logs/cassandra.log 2>&1 &
+# '
+# su - cassandra-user -c '
+#   nohup ~/nodeC/bin/cassandra -R > ~/nodeC/logs/cassandra.log 2>&1 &
+# '
