@@ -35,4 +35,4 @@ echo -e "\n" > /dev/tty 2>&1
 
 exec > /dev/tty 2>&1
 
-su - cassandra-user
+# su - cassandra-user
