@@ -3,35 +3,51 @@ Then, you will populate the table and performa simle query.
 
 ✅ Use `cqlsh` to connect to Cassandra
 ```
-~/nodeA/bin/cqlsh
+~/nodeA/bin/cqlsh 172.30.10
 ```{{exec}}
 
-Verify that the version is 11.0.23
+You will need to create a keyspace for this lab.
 
-While connected through the terminal, you should verify the user account you are logged in with.
-
-✅ Check the account
+✅ Use `cqlsh` to create a keyspace
 ```
-whoami
+CREATE KEYSPACE world WITH replication = {
+  'class':'NetwrokTopologyStrategy',
+  'datacenter1':1
+};
 ```{{exec}}
 
-You are currently logged in as a *root* user.
-
-Cassandra should *never* run under a user account with *root* privileges.
-Fortunately, the lab environment setup created a new user in a new group to run Cassandra.
-
-**User** : cassandra-user<br>
-**Group**: cassandra
-
-
-✅ Switch to *cassandra-user*.
+✅ Use the keyspace you created
 ```
-su cassandra-user
+use world;
 ```{{exec}}
 
-✅ Navigate to cassandra-user's home directory.
+Next you will create a table.
+The table will contain country names and the continents there they are located.
+
+✅ Create the table
 ```
-cd /home/cassandra-user
+CREATE TABLE countries {
+  id int PRIMARY KEY,
+  continent text,
+  country text
+}
 ```{{exec}}
 
-You are now ready to install Cassandra into `/home/cassandra-user`.
+✅ Create the table
+```
+INSERT INTO countries (id, continent, country) VALUES (1, 'Africa', 'Nigeria');
+INSERT INTO countries (id, continent, country) VALUES (2, 'Africa', 'South Africa');
+INSERT INTO countries (id, continent, country) VALUES (3, 'Asia', 'China');
+INSERT INTO countries (id, continent, country) VALUES (4, 'Asia', 'India');
+INSERT INTO countries (id, continent, country) VALUES (5, 'Europe', 'Germany');
+INSERT INTO countries (id, continent, country) VALUES (6, 'Europe', 'France');
+INSERT INTO countries (id, continent, country) VALUES (7, 'North America', 'United States');
+INSERT INTO countries (id, continent, country) VALUES (8, 'North America', 'Canada');
+INSERT INTO countries (id, continent, country) VALUES (9, 'South America', 'Brazil');
+INSERT INTO countries (id, continent, country) VALUES (10, 'South America', 'Argentina');
+```{{exec}}
+
+✅ Select all countries
+```
+SELECT * from coiuntries;
+```{{exec}}
