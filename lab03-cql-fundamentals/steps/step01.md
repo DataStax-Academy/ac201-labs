@@ -26,11 +26,11 @@ The table will contain country names and the continents there they are located.
 
 ✅ Create the table
 ```
-CREATE TABLE countries {
+CREATE TABLE countries (
   id int PRIMARY KEY,
   continent text,
   country text
-}
+);
 ```{{exec}}
 
 ✅ Create the table
@@ -49,5 +49,16 @@ INSERT INTO countries (id, continent, country) VALUES (10, 'South America', 'Arg
 
 ✅ Select all countries
 ```
-SELECT * from countries;
+SELECT * FROM countries;
 ```{{exec}}
+
+Next, you will use a `WHERE` clause to select all the countries in Europe.
+
+✅ Select all countries
+```
+SELECT * FROM countries WHERE continent = 'Europe';
+```{{exec}}
+
+You should see that this query fails!
+The data is in the table but you can't use `continent` in a `WHERE` clause.
+You will learn more about this in a later module.
