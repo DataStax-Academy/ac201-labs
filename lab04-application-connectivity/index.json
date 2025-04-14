@@ -13,7 +13,9 @@
       ],
       "assets": {
         "host01": [
-          {"file": "pom.xml", "target": "/assets", "chmod": "+r"}
+          {"file": "pom.xml", "target": "/assets", "chmod": "+r"},
+          {"file": "CassandraClient.java", "target": "/assets", "chmod": "+r"},
+          {"file": "build-database.cql", "target": "/assets", "chmod": "+r"}
         ]
       },
       "intro": {

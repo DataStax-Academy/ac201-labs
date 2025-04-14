@@ -123,7 +123,8 @@ for NODE in nodeA; do
   
 done
 
-su - cassandra-user -c 'mkdir ~/working'
+su - cassandra-user -c 'mv /assets /home/cassandra-user/assets/'
+su - cassandra-user -c ' chown -R cassandra-user:cassandra /home/cassandra-user/assets'
 
 #
 # Start the nodes in the background
