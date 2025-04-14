@@ -1,16 +1,5 @@
 #!/bin/bash
 
-# Detect the primary non-loopback interface (excluding docker0 and loopback)
-NET_IFACE=$(ip -4 -o addr show scope global | grep -v docker | awk '{print $2}' | head -n 1)
-
-# List of virtual IPs to assign
-IP_LIST=("172.30.1.10" "172.30.1.11" "172.30.1.12")
-
-# Assign each IP to the detected interface
-for ip in "${IP_LIST[@]}"; do
-  ip addr add "$ip/24" dev "$NET_IFACE"
-done
-
 groupadd cassandra
 useradd -m -s /bin/bash -g cassandra cassandra-user
 
@@ -21,6 +10,21 @@ export PS1="\w \$ "
 EOF
 
 chown cassandra-user:cassandra /home/cassandra-user/.bash_profile
+
+
+# Detect the primary non-loopback interface (excluding docker0 and loopback)
+NET_IFACE=$(ip -4 -o addr show scope global | grep -v docker | awk '{print $2}' | head -n 1)
+
+echo "Detected network interface: $NET_IFACE" > ~/network.txt
+
+# List of virtual IPs to assign
+IP_LIST=("172.30.1.10" "172.30.1.11" "172.30.1.12")
+
+# Assign each IP to the detected interface
+for ip in "${IP_LIST[@]}"; do
+  ip addr add "$ip/24" dev "$NET_IFACE"
+done
+
 
 apt-get update
 
