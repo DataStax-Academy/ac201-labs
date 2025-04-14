@@ -127,8 +127,8 @@ done
 # Handle the uploaded assets
 #
 
-mkdir -p "$HOME_DIR/java-app"
-mkdir -p "$HOME_DIR/java-app/src/main/java/com/example"
+mkdir -p $HOME_DIR/java-app
+mkdir -p $HOME_DIR/java-app/src/main/java/com/example
 
 mv /assets/build-database.cql $HOME_DIR/build-database.cql
 mv /assets/pom.xml $HOME_DIR/java-app/pom.xml
