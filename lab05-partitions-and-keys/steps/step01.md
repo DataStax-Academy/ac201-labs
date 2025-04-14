@@ -37,28 +37,28 @@ CREATE TABLE restaurants_by_cuisine (
 
 ✅ Populate the table
 ```
-INSERT INTO restaurants (id, name, cuisine, rating, city) 
+INSERT INTO restaurants_by_cuisine (id, name, cuisine, rating, city) 
   VALUES (1, 'Luigi''s Pizza', 'pizza', 5, 'Dallas');
-INSERT INTO restaurants (id, name, cuisine, rating, city) 
+INSERT INTO restaurants_by_cuisine (id, name, cuisine, rating, city) 
   VALUES (2, 'Golden Wok', 'chinese', 4, 'Dallas');
-INSERT INTO restaurants (id, name, cuisine, rating, city) 
+INSERT INTO restaurants_by_cuisine (id, name, cuisine, rating, city) 
   VALUES (3, 'Sea Breeze', 'seafood', 3, 'Dallas');
-INSERT INTO restaurants (id, name, cuisine, rating, city) 
+INSERT INTO restaurants_by_cuisine (id, name, cuisine, rating, city) 
   VALUES (4, 'Pizza Haven', 'pizza', 2, 'Dallas');
-INSERT INTO restaurants (id, name, cuisine, rating, city) 
+INSERT INTO restaurants_by_cuisine (id, name, cuisine, rating, city) 
   VALUES (5, 'Panda Garden', 'chinese', 5, 'Dallas');
-INSERT INTO restaurants (id, name, cuisine, rating, city) 
+INSERT INTO restaurants_by_cuisine (id, name, cuisine, rating, city) 
   VALUES (6, 'Captain''s Catch', 'seafood', 4, 'Dallas');
-INSERT INTO restaurants (id, name, cuisine, rating, city) 
+INSERT INTO restaurants_by_cuisine (id, name, cuisine, rating, city) 
   VALUES (7, 'Slice of Heaven', 'pizza', 3, 'Seattle');
-INSERT INTO restaurants (id, name, cuisine, rating, city) 
+INSERT INTO restaurants_by_cuisine (id, name, cuisine, rating, city) 
   VALUES (8, 'Mandarin Express', 'chinese', 2, 'Seattle');
-INSERT INTO restaurants (id, name, cuisine, rating, city) 
+INSERT INTO restaurants_by_cuisine (id, name, cuisine, rating, city) 
   VALUES (9, 'Neptune''s Table', 'seafood', 5, 'Seattle');
-INSERT INTO restaurants (id, name, cuisine, rating, city) 
+INSERT INTO restaurants_by_cuisine (id, name, cuisine, rating, city) 
   VALUES (10, 'Cheesy Bites', 'pizza', 4, 'Seattle');
-INSERT INTO restaurants (id, name, cuisine, rating, city) 
+INSERT INTO restaurants_by_cuisine (id, name, cuisine, rating, city) 
   VALUES (11, 'Dragon Palace', 'chinese', 3, 'Seattle');
-INSERT INTO restaurants (id, name, cuisine, rating, city)   
+INSERT INTO restaurants_by_cuisine (id, name, cuisine, rating, city)   
   VALUES (12, 'Ocean Delight', 'seafood', 1, 'Seattle');
 ```{{exec}}
