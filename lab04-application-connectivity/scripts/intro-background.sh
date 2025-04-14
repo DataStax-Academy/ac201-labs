@@ -116,10 +116,10 @@ for NODE in nodeA; do
   mkdir -p "$HOME_DIR/$NODE/commitlog"
   mkdir -p "$HOME_DIR/$NODE/saved_caches"
 
-  chown -R cassandra-user:cassandra "$HOME_DIR/$NODE/logs"
-  chown -R cassandra-user:cassandra "$HOME_DIR/$NODE/data"
-  chown -R cassandra-user:cassandra "$HOME_DIR/$NODE/commitlog"
-  chown -R cassandra-user:cassandra "$HOME_DIR/$NODE/saved_caches"
+  # chown -R cassandra-user:cassandra "$HOME_DIR/$NODE/logs"
+  # chown -R cassandra-user:cassandra "$HOME_DIR/$NODE/data"
+  # chown -R cassandra-user:cassandra "$HOME_DIR/$NODE/commitlog"
+  # chown -R cassandra-user:cassandra "$HOME_DIR/$NODE/saved_caches"
   
 done
 
@@ -127,8 +127,11 @@ done
 # Handle the uploaded assets
 #
 
-mv /assets /home/cassandra-user/assets/
-sudo chown -R cassandra-user:cassandra /home/cassandra-user/assets
+mv /assets/build-database.cql $HOME_DIR/build-database.cql
+mv /assets/pom.xml $HOME_DIR/java-app/pom.xml
+mv /assets/CassandraClient.java $HOME_DIR/java-app/src/main/java/com/example/CassandraClient.java
+
+sudo chown -R cassandra-user:cassandra $HOME_DIR
 
 #
 # Start the nodes in the background
