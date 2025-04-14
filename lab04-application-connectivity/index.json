@@ -25,6 +25,11 @@
         "text": "steps/finish.md"
       }
     },
+    "assets": {
+      "host01": [
+        {"file": "pom.xml", "target": "/home/cassandra-user/working-java", "chmod": "+r"}
+      ]
+    },
     "environment": {
       "uilayout": "terminal"
     },
