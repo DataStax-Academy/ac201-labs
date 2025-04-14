@@ -49,5 +49,5 @@ INSERT INTO countries (id, continent, country) VALUES (10, 'South America', 'Arg
 
 ✅ Select all countries
 ```
-SELECT * from coiuntries;
+SELECT * from countries;
 ```{{exec}}
