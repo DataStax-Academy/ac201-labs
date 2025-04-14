@@ -1,38 +1,18 @@
-In this step, you will verify that the environment is set up to install and run Cassandra. 
+In this step, build a table and access it from Java and Python apps. 
 
-Cassandra 5 requires at least JDK 11 so first we will verify that  we have the right JDK installed.
+Use the **Editor** tab to open an Theia window.
+Examine the CQL file: `/filesystem/home/cassandra-user/build-database.cql`
 
-✅ Check the JDK version.
+Switch back to **Tab 1**
+
+✅ Use `cqlsh` to exectue the CQL file and build a database
 ```
-java -version
+~/nodeA/bin/cqlsh 172.30.1.10 -f build-database.cql
 ```{{exec}}
 
-Verify that the version is 11.0.23
+Verify that the table has been created and that data has been loaded.
 
-While connected through the terminal, you should verify the user account you are logged in with.
-
-✅ Check the account
+✅ Use `cqlsh` to retrieve countries from the database.
 ```
-whoami
+/home/cassandra-user/nodeA/bin/cqlsh 172.30.1.10 9042 -e "SELECT * FROM world.countries;"
 ```{{exec}}
-
-You are currently logged in as a *root* user.
-
-Cassandra should *never* run under a user account with *root* privileges.
-Fortunately, the lab environment setup created a new user in a new group to run Cassandra.
-
-**User** : cassandra-user<br>
-**Group**: cassandra
-
-
-✅ Switch to *cassandra-user*.
-```
-su cassandra-user
-```{{exec}}
-
-✅ Navigate to cassandra-user's home directory.
-```
-cd /home/cassandra-user
-```{{exec}}
-
-You are now ready to install Cassandra into `/home/cassandra-user`.
