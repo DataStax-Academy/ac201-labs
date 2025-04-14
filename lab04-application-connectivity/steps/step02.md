@@ -27,3 +27,9 @@ cd /home/cassandra-user/java-app
 mvn clean compile exec:java -Dexec.mainClass="com.example.CassandraClient"
 ```{{exec}}
 
+You should see *lots* of text scroll by.
+Maven has to load all the necessary Java dependencies before it can build your application.
+Finally, after lading dependencies, Maven will build and execute yout app. 
+You should see a list of countries.
+
+![Java client](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab04/countries-java.jpg)

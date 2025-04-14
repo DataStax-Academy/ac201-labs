@@ -129,10 +129,12 @@ done
 
 mkdir -p $HOME_DIR/java-app
 mkdir -p $HOME_DIR/java-app/src/main/java/com/example
+mkdir -p $HOME_DIR/python-app
 
 mv /assets/build-database.cql $HOME_DIR/build-database.cql
 mv /assets/pom.xml $HOME_DIR/java-app/pom.xml
 mv /assets/CassandraClient.java $HOME_DIR/java-app/src/main/java/com/example/CassandraClient.java
+mv /assets/CassandraClient.py $HOME_DIR/python-app/CassandraClient.py
 
 sudo chown -R cassandra-user:cassandra $HOME_DIR
 
