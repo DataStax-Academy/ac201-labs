@@ -27,7 +27,7 @@ done
 apt-get update
 
 sudo apt-get install -y openjdk-11-jdk-headless < /dev/null > /dev/null 
-sudo apt install maven
+sudo apt install -y maven
 
 # Downgrade Python to v3.11
 # Download prebuilt Python 3.11 binary from GitHub release
