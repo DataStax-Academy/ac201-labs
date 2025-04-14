@@ -3,7 +3,7 @@
     "title": "AC201 Lab 02: Gossip",
     "description": "Observe the gossip protocol in action",
     "difficulty": "Beginner",
-    "time": "3 minutes",
+    "time": "5 minutes",
     "details": {
       "assets": {
         "host01": [
@@ -12,7 +12,7 @@
       },
       "steps": [
         {
-          "title": "Step 1: Configure the environment",
+          "title": "Step 1: Examine gossip",
           "text": "steps/step01.md"
         }
       ],
