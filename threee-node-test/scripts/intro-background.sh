@@ -61,14 +61,14 @@ su - cassandra-user -c '
 
 # Base IPs and ports
 declare -A IPS=( [nodeA]=172.30.1.10 [nodeB]=172.30.1.11 [nodeC]=172.30.1.12 )
-declare -A STORAGE_PORTS=( [nodeA]=7000 [nodeB]=7001 [nodeC]=7002 )
-declare -A NATIVE_PORTS=( [nodeA]=9042 [nodeB]=9043 [nodeC]=9044 )
-declare -A JMX_PORTS=( [nodeA]=7199 [nodeB]=7200 [nodeC]=7201 )
+declare -A STORAGE_PORTS=( [nodeA]=7000 [nodeB]=7000 [nodeC]=7000 )
+declare -A NATIVE_PORTS=( [nodeA]=9042 [nodeB]=9042 [nodeC]=9042 )
+declare -A JMX_PORTS=( [nodeA]=9042 [nodeB]=9042 [nodeC]=9042 )
 
 # Common settings
 HOME_DIR="/home/cassandra-user"
 CLUSTER_NAME="Academy Cluster"
-SEED_IP="172.30.1.10,172.30.1.11,172.30.1.12"  # NodeA is the seed
+SEED_IP="172.30.1.10:7000,172.30.1.11,172.30.1.12"  # NodeA is the seed
 
 for NODE in nodeA nodeB nodeC; do
 
@@ -106,6 +106,7 @@ for NODE in nodeA nodeB nodeC; do
   grep -q "Dcassandra.storagedir" "$ENV_SH" || \
     echo "JVM_OPTS=\"\$JVM_OPTS -Dcassandra.storagedir=$HOME_DIR/$NODE\"" >> "$ENV_SH"
 
+  echo "JVM_OPTS=\"$JVM_OPTS -Xms512M -Xmx512M\"" >> "$ENV_SH"
 
   # Create data directories
   
