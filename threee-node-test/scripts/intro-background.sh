@@ -98,6 +98,14 @@ for NODE in nodeA nodeB nodeC; do
   # echo "JVM_OPTS=\"\$JVM_OPTS -Dcassandra-pidfile=$HOME_DIR/$NODE/cassandra.pid\"" >> "$ENV_SH"
   echo "CASSANDRA_PIDFILE=\"$HOME_DIR/$NODE/cassandra.pid\"" >> "$ENV_SH"
 
+  # Add JVM_OPTS for logdir
+  grep -q "Dcassandra.logdir" "$ENV_SH" || \
+    echo "JVM_OPTS=\"\$JVM_OPTS -Dcassandra.logdir=$HOME_DIR/$NODE/logs\"" >> "$ENV_SH"
+
+  # Add JVM_OPTS for storagedir
+  grep -q "Dcassandra.storagedir" "$ENV_SH" || \
+    echo "JVM_OPTS=\"\$JVM_OPTS -Dcassandra.storagedir=$HOME_DIR/$NODE\"" >> "$ENV_SH"
+
 
   # Create data directories
   
