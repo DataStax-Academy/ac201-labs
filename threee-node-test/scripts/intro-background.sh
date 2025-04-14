@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# Detect the primary non-loopback interface (excluding docker0 and loopback)
+NET_IFACE=$(ip -4 -o addr show scope global | grep -v docker | awk '{print $2}' | head -n 1)
+
+# List of virtual IPs to assign
+IP_LIST=("172.30.1.10" "172.30.1.11" "172.30.1.12")
+
+# Assign each IP to the detected interface
+for ip in "${IP_LIST[@]}"; do
+  ip addr add "$ip/24" dev "$NET_IFACE"
+done
+
 groupadd cassandra
 useradd -m -s /bin/bash -g cassandra cassandra-user
 
@@ -44,11 +55,10 @@ su - cassandra-user -c '
 # configure the yaml files
 #
 
-ip addr add 127.0.0.2/8 dev lo
-ip addr add 127.0.0.3/8 dev lo
+# 172.30.1.10,172.30.1.11,172.30.1.12
 
 # Base IPs and ports
-declare -A IPS=( [nodeA]=127.0.0.1 [nodeB]=127.0.0.2 [nodeC]=127.0.0.3 )
+declare -A IPS=( [nodeA]=172.30.1.10 [nodeB]=172.30.1.11 [nodeC]=172.30.1.12 )
 declare -A STORAGE_PORTS=( [nodeA]=7000 [nodeB]=7001 [nodeC]=7002 )
 declare -A NATIVE_PORTS=( [nodeA]=9042 [nodeB]=9043 [nodeC]=9044 )
 declare -A JMX_PORTS=( [nodeA]=7199 [nodeB]=7200 [nodeC]=7201 )
@@ -56,7 +66,7 @@ declare -A JMX_PORTS=( [nodeA]=7199 [nodeB]=7200 [nodeC]=7201 )
 # Common settings
 HOME_DIR="/home/cassandra-user"
 CLUSTER_NAME="Academy Cluster"
-SEED_IP="127.0.0.1,127.0.0.2,127.0.0.3"  # NodeA is the seed
+SEED_IP="172.30.1.10,172.30.1.11,172.30.1.12"  # NodeA is the seed
 
 for NODE in nodeA nodeB nodeC; do
 
