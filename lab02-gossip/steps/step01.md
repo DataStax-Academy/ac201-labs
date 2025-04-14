@@ -11,3 +11,10 @@ You should see all three servers running in the `U/N` state.
 ```
 ~/nodeA/bin/nodetool gossipinfo
 ```{{exec}}
+
+You should see gossip information for all three servers in the cluster.
+
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
