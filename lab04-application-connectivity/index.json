@@ -27,7 +27,7 @@
     },
     "assets": {
       "client": [
-        {"file": "pom.xml", "target": "/tmp/assets", "chmod": "+r"}
+        {"file": "assets/pom.xml", "target": "/tmp/assets", "chmod": "+r"}
       ]
     },
     "environment": {
