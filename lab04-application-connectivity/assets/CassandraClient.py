@@ -6,7 +6,7 @@ session = cluster.connect()
 session.set_keyspace('world') 
 
 # Query the inventory table
-query = "SELECT id, continent, countrt FROM countries"
+query = "SELECT id, continent, country FROM countries"
 rows = session.execute(query)
 
 # Display the results

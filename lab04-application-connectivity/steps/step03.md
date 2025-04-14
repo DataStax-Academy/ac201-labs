@@ -2,6 +2,11 @@ In this step you will run a Python application that retrieves data from the `cou
 
 Use the **Editor** tab to open a Theia window and examine the Python file: `/filesystem/home/cassandra-user/python-app/CassandraClient.py`
 
+✅ Use `pip` to the Python driver for Cassandra
+```
+/opt/python3.11/bin/pip3.11 install cassandra-driver
+```{{exec}}
+
 
 ✅ Run the app in the Python interpreter
 ```
