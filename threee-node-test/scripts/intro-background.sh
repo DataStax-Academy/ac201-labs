@@ -91,9 +91,9 @@ for NODE in nodeA nodeB nodeC; do
   sed -i "s|^commitlog_directory:.*|commitlog_directory: ./commitlog|" "$YAML"
   sed -i "s|^saved_caches_directory:.*|saved_caches_directory: ./saved_caches|" "$YAML"
 
-  # Set JMX port in cassandra-env.sh
-  sed -i "s/^JVM_OPTS=\"\$JVM_OPTS -Dcom.sun.management.jmxremote.port=.*/JVM_OPTS=\"\$JVM_OPTS -Dcom.sun.management.jmxremote.port=${JMX_PORTS[$NODE]}\"/" "$ENV_SH"
-
+   # Set JMX_PORT value directly
+  sed -i "s/^JMX_PORT=.*/JMX_PORT=\"${JMX_PORTS[$NODE]}\"/" "$ENV_SH"
+  
   # Create data directories
   
   mkdir -p "$HOME_DIR/$NODE/logs"
