@@ -16,17 +16,17 @@ You should see gossip information for all three servers in the cluster.
 
 | Property | Description |
 | ----------- | ----------- |
-| genertion | Title |
-| heartbeat | Text |
-| LOAD | Text |
-| SCHEMA | Text |
-| DC | Text |
-| RACK | Text |
-| RELEASE_VERSION | Text |
-| NET_VERSION | Text |
-| HOST_ID | Text |
-| RPC_READY | Text |
-| NATIVE_ADDRESS_AND_PORT | Text |
-| STATUS_WITH_PORT | Text |
-| SSTABLE_VERSIONS | Text |
-| TOKENS | Text |
+| genertion | timestamp |
+| heartbeat | increasing counter |
+| LOAD | data on node in bytes |
+| SCHEMA | schema version |
+| DC | datacenter name |
+| RACK | rack name |
+| RELEASE_VERSION | Cassandra version |
+| NET_VERSION | message protocol version |
+| HOST_ID | host UUID |
+| RPC_READY | ready to accept requests |
+| NATIVE_ADDRESS_AND_PORT | CQL IP and port |
+| STATUS_WITH_PORT | status and token value |
+| SSTABLE_VERSIONS | SSTable format version |
+| TOKENS | number of tokens |
