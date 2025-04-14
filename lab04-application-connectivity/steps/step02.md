@@ -26,3 +26,4 @@ cd /home/cassandra-user/java-app
 ```
 mvn clean compile exec:java -Dexec.mainClass="com.example.CassandraClient"
 ```{{exec}}
+

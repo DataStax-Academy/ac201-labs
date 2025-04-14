@@ -18,3 +18,7 @@ Verify that the table has been created and that data has been loaded.
 ```
 /home/cassandra-user/nodeA/bin/cqlsh 172.30.1.10 9042 -e "SELECT * FROM world.countries;"
 ```{{exec}}
+
+You should see a list of countries and the continents they are on.
+
+![countries table](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab04/countries-cqlsh.jpg)
