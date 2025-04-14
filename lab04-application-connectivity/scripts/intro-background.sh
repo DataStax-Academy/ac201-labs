@@ -123,6 +123,8 @@ for NODE in nodeA; do
   
 done
 
+su - cassandra-user -c 'mkdir ~/working'
+
 #
 # Start the nodes in the background
 #
