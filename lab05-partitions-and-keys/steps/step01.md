@@ -1,38 +1,64 @@
-In this step, you will verify that the environment is set up to install and run Cassandra. 
+In this step, you will build a table with a partition key column and two clustering columns.
+This table will be partitioned by cusine (type) and ordered by ratings 1-5.
+You will run some queries and consider queries that this table does not support.
 
-Cassandra 5 requires at least JDK 11 so first we will verify that  we have the right JDK installed.
-
-✅ Check the JDK version.
+✅ Start by connecting to the cluster wuth `cqlsh` 
 ```
-java -version
+ /home/cassandra-user/nodeA/bin/cqlsh 172.30.1.10
 ```{{exec}}
 
-Verify that the version is 11.0.23
+You will create the table in the 'dining' keyspace.
 
-While connected through the terminal, you should verify the user account you are logged in with.
-
-✅ Check the account
+✅ Create the `dining` keyspace.
 ```
-whoami
+CREATE KEYSPACE dining WITH replication = {
+  'class':'NetworkTopologyStrategy',
+  'datacenter1':1
+};
 ```{{exec}}
 
-You are currently logged in as a *root* user.
-
-Cassandra should *never* run under a user account with *root* privileges.
-Fortunately, the lab environment setup created a new user in a new group to run Cassandra.
-
-**User** : cassandra-user<br>
-**Group**: cassandra
-
-
-✅ Switch to *cassandra-user*.
+✅ Use the `dining` keyspace.
 ```
-su cassandra-user
+USE dining;
 ```{{exec}}
 
-✅ Navigate to cassandra-user's home directory.
+You should see a list of countries and the continents they are on.
+
+✅ Create the table
 ```
-cd /home/cassandra-user
+CREATE TABLE restaurants_by_cuisine (
+  cuisine text,
+  rating int,
+  name text,
+  city text,
+  PRIMARY KEY ((cuisine), rating, name)
+);
 ```{{exec}}
 
-You are now ready to install Cassandra into `/home/cassandra-user`.
+✅ Populate the table
+```
+INSERT INTO restaurants (id, name, cuisine, rating, city) 
+  VALUES (1, 'Luigi''s Pizza', 'pizza', 5, 'Dallas');
+INSERT INTO restaurants (id, name, cuisine, rating, city) 
+  VALUES (2, 'Golden Wok', 'chinese', 4, 'Dallas');
+INSERT INTO restaurants (id, name, cuisine, rating, city) 
+  VALUES (3, 'Sea Breeze', 'seafood', 3, 'Dallas');
+INSERT INTO restaurants (id, name, cuisine, rating, city) 
+  VALUES (4, 'Pizza Haven', 'pizza', 2, 'Dallas');
+INSERT INTO restaurants (id, name, cuisine, rating, city) 
+  VALUES (5, 'Panda Garden', 'chinese', 5, 'Dallas');
+INSERT INTO restaurants (id, name, cuisine, rating, city) 
+  VALUES (6, 'Captain''s Catch', 'seafood', 4, 'Dallas');
+INSERT INTO restaurants (id, name, cuisine, rating, city) 
+  VALUES (7, 'Slice of Heaven', 'pizza', 3, 'Seattle');
+INSERT INTO restaurants (id, name, cuisine, rating, city) 
+  VALUES (8, 'Mandarin Express', 'chinese', 2, 'Seattle');
+INSERT INTO restaurants (id, name, cuisine, rating, city) 
+  VALUES (9, 'Neptune''s Table', 'seafood', 5, 'Seattle');
+INSERT INTO restaurants (id, name, cuisine, rating, city) 
+  VALUES (10, 'Cheesy Bites', 'pizza', 4, 'Seattle');
+INSERT INTO restaurants (id, name, cuisine, rating, city) 
+  VALUES (11, 'Dragon Palace', 'chinese', 3, 'Seattle');
+INSERT INTO restaurants (id, name, cuisine, rating, city)   
+  VALUES (12, 'Ocean Delight', 'seafood', 1, 'Seattle');
+```{{exec}}
