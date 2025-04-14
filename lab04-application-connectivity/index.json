@@ -7,8 +7,16 @@
     "details": {
       "steps": [
         {
-          "title": "Step 1: Configure the environment",
+          "title": "Step 1: Create the database",
           "text": "steps/step01.md"
+        },
+        {
+          "title": "Step 2: Connect with a Java app",
+          "text": "steps/step02.md"
+        },
+        {
+          "title": "Step 3: Connect with a Python app",
+          "text": "steps/step03.md"
         }
       ],
       "assets": {
