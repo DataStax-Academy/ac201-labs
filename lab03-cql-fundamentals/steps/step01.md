@@ -3,7 +3,7 @@ Then, you will populate the table and performa simle query.
 
 ✅ Use `cqlsh` to connect to Cassandra
 ```
-~/nodeA/bin/cqlsh 172.30.10
+~/nodeA/bin/cqlsh 172.30.1.10
 ```{{exec}}
 
 You will need to create a keyspace for this lab.
