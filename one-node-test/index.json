@@ -1,7 +1,7 @@
 {
     "private": false,
-    "title": "1 Node Test",
-    "description": "One node Cassandra cluster",
+    "title": "3 Node Test",
+    "description": "Three node Cassandra cluster",
     "difficulty": "Beginner",
     "time": "3 minutes",
     "details": {
@@ -29,6 +29,6 @@
       "uilayout": "terminal"
     },
     "backend": {
-      "imageid": "ubuntu"
+      "imageid": "ubuntu-4GB"
     }
   }
