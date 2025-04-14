@@ -5,17 +5,17 @@
     "difficulty": "Beginner",
     "time": "15 minutes",
     "details": {
-      "assets": {
-        "host01": [
-            {"file": "wait.sh", "target": "/usr/local/bin", "chmod": "+x"}
-        ]
-      },
       "steps": [
         {
           "title": "Step 1: Configure the environment",
           "text": "steps/step01.md"
         }
       ],
+      "assets": {
+        "host01": [
+          {"file": "pom.xml", "target": "/assets", "chmod": "+r"}
+        ]
+      },
       "intro": {
         "foreground": "scripts/intro-foreground.sh",
         "background": "scripts/intro-background.sh",
@@ -24,11 +24,6 @@
       "finish": {
         "text": "steps/finish.md"
       }
-    },
-    "assets": {
-      "host01": [
-        {"file": "pom.xml", "target": "~/assets", "chmod": "+r"}
-      ]
     },
     "environment": {
       "uilayout": "terminal"
