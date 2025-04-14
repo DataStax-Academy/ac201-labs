@@ -70,7 +70,7 @@ HOME_DIR="/home/cassandra-user"
 CLUSTER_NAME="Academy Cluster"
 SEED_IP="172.30.1.10:7000,172.30.1.11:7001,172.30.1.12:7002" 
 
-for NODE in nodeA nodeB nodeC; do
+for NODE in nodeA; do
 
   CONF_DIR="$HOME_DIR/$NODE/conf"
   YAML="$CONF_DIR/cassandra.yaml"
@@ -127,5 +127,3 @@ done
 #
 
 su - cassandra-user -c '~/nodeA/bin/cassandra -R > ~/nodeA/logs/cassandra.log 2>&1 &'
-su - cassandra-user -c '~/nodeB/bin/cassandra -R > ~/nodeB/logs/cassandra.log 2>&1 &'
-su - cassandra-user -c '~/nodeC/bin/cassandra -R > ~/nodeC/logs/cassandra.log 2>&1 &'
