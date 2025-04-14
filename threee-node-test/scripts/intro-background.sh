@@ -44,6 +44,9 @@ su - cassandra-user -c '
 # configure the yaml files
 #
 
+ip addr add 127.0.0.2/8 dev lo
+ip addr add 127.0.0.3/8 dev lo
+
 # Base IPs and ports
 declare -A IPS=( [nodeA]=127.0.0.1 [nodeB]=127.0.0.2 [nodeC]=127.0.0.3 )
 declare -A STORAGE_PORTS=( [nodeA]=7000 [nodeB]=7001 [nodeC]=7002 )
