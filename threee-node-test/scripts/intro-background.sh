@@ -68,7 +68,7 @@ declare -A JMX_PORTS=( [nodeA]=7199 [nodeB]=7200 [nodeC]=7201 )
 # Common settings
 HOME_DIR="/home/cassandra-user"
 CLUSTER_NAME="Academy Cluster"
-SEED_IP="172.30.1.10:7000,172.30.1.11:7001,172.30.1.12:7002"  # NodeA is the seed
+SEED_IP="172.30.1.10:7000,172.30.1.11:7001,172.30.1.12:7002" 
 
 for NODE in nodeA nodeB nodeC; do
 
