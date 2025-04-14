@@ -9,7 +9,7 @@ Switch back to **Tab 1**
 
 ✅ Use `cqlsh` to exectue the CQL file and build a database
 ```
-~/nodeA/bin/cqlsh 172.30.1.10 -f build-database.cql
+nodeA/bin/cqlsh 172.30.1.10 -f build-database.cql
 ```{{exec}}
 
 Verify that the table has been created and that data has been loaded.
