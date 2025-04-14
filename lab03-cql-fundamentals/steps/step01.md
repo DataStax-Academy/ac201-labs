@@ -11,7 +11,7 @@ You will need to create a keyspace for this lab.
 ✅ Use `cqlsh` to create a keyspace
 ```
 CREATE KEYSPACE world WITH replication = {
-  'class':'NetwrokTopologyStrategy',
+  'class':'NetworkTopologyStrategy',
   'datacenter1':1
 };
 ```{{exec}}
