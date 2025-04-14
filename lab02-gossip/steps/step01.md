@@ -14,7 +14,19 @@ You should see all three servers running in the `U/N` state.
 
 You should see gossip information for all three servers in the cluster.
 
-| Syntax | Description |
+| Property | Description |
 | ----------- | ----------- |
-| Header | Title |
-| Paragraph | Text |
+| genertion | Title |
+| heartbeat | Text |
+| LOAD | Text |
+| SCHEMA | Text |
+| DC | Text |
+| RACK | Text |
+| RELEASE_VERSION | Text |
+| NET_VERSION | Text |
+| HOST_ID | Text |
+| RPC_READY | Text |
+| NATIVE_ADDRESS_AND_PORT | Text |
+| STATUS_WITH_PORT | Text |
+| SSTABLE_VERSIONS | Text |
+| TOKENS | Text |
