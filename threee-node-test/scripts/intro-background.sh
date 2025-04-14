@@ -93,7 +93,10 @@ for NODE in nodeA nodeB nodeC; do
 
    # Set JMX_PORT value directly
   sed -i "s/^JMX_PORT=.*/JMX_PORT=\"${JMX_PORTS[$NODE]}\"/" "$ENV_SH"
-  
+
+  # Add unique PID file path
+  echo "JVM_OPTS=\"\$JVM_OPTS -Dcassandra-pidfile=$HOME_DIR/$NODE/cassandra.pid\"" >> "$ENV_SH"
+
   # Create data directories
   
   mkdir -p "$HOME_DIR/$NODE/logs"
