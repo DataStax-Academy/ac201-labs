@@ -57,7 +57,7 @@ su - cassandra-user -c '
 # configure the yaml files
 #
 
-# 172.30.1.10,172.30.1.11,172.30.1.12
+/
 
 # Base IPs and ports
 declare -A IPS=( [nodeA]=172.30.1.10 [nodeB]=172.30.1.11 [nodeC]=172.30.1.12 )
