@@ -15,9 +15,9 @@ You will see the `CQLSession` builder defining the IP address, keyspace and tabl
 Next you will see the query: `SELECT id, continent, country FROM countries`.
 After executing the query, the application iterates through the results and displays them.
 
-In **Tab 1** navigate to `/home/cassandra-user/java-app`.
+Switch to **Tab 1**. 
 
-✅ Use `cqlsh` to exectue the CQL file and build a database
+✅ Navigate to the `java-app` directory
 ```
 cd /home/cassandra-user/java-app
 ```{{exec}}
