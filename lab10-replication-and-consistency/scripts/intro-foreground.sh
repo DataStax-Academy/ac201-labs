@@ -23,7 +23,7 @@ echo -ne "\n\n Configuring the lab environment " > /dev/tty 2>&1
 #!/bin/bash
 
 # List of directories to wait for
-directories=(~/nodeA ~/nodeB ~/nodeC)
+directories=(/home/cassandra-user/nodeA /home/cassandra-user/nodeB /home/cassandra-user/nodeC)
 
 # Loop until all directories exist
 while true; do
