@@ -1,1 +1,1 @@
-``{{exec interrupt}}
+`Ctrl-C`{{exec interrupt}}
