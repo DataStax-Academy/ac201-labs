@@ -1,13 +1,18 @@
 {
     "private": false,
-    "title": "AC201 Lab 05: Partions and Keys",
-    "description": "Make use of partitions",
+    "title": "AC201 Lab 04: CQL Fundamentals",
+    "description": "Learn the basics of CQL",
     "difficulty": "Beginner",
-    "time": "10 minutes",
+    "time": "3 minutes",
     "details": {
+      "assets": {
+        "host01": [
+            {"file": "wait.sh", "target": "/usr/local/bin", "chmod": "+x"}
+        ]
+      },
       "steps": [
         {
-          "title": "Step 1: Build the restaurants table",
+          "title": "Step 1: Configure the environment",
           "text": "steps/step01.md"
         }
       ],
