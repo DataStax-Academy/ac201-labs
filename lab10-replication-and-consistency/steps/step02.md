@@ -46,6 +46,7 @@ The behavior is more interesting when some of the servers are not running.
 Next you are going to shut down two of the servers.
 
 ✅ Open a new Tab
+
 Click on the **+** icon (next to **Tab2**) to create a new tab.
 Next, click on **Tab3** to switch tabs.
 
@@ -59,6 +60,7 @@ fuser -k 9044/tcp
 ```{{exec}}
 
 ✅ Switch to Tab1
+
 Click on the **Tab1**
 
 Nodetool should still be running. 
@@ -67,8 +69,9 @@ Server `172.30.1.11`(nodeA) should still be in the **UN** state.
 
 ![nodeB and nodeC are down](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab10/two-down.jpg)
 
-✅ Switch to Tab1
-Click on the **Tab1**
+✅ Switch to Tab2
+
+Click on the **Tab2**
 
 You should still be in the `cqlsh` shell.
 
@@ -77,7 +80,7 @@ You are going try to insert three new customers into the table at the consistenc
 ✅ Insert Tal and consistency level `ONE`
 ```
 CONSISTENCY ONE;
-INSERT INTO customers( id, name ) VALUES(1, 'Tal' );
+INSERT INTO customers( id, name ) VALUES(4, 'Tal' );
 ```{{exec}}
 
 This `INSERT` succeded because there is one node (nodaA) still running. 
@@ -86,7 +89,7 @@ Cassandra tried to satisfy the replication factor and write to all three nodes, 
 ✅ Insert Ariel at consistency level `LOCAL_QUORUM`
 ```
 CONSISTENCY LOCAL_QUORUM;
-INSERT INTO customers( id, name ) VALUES(2, 'Ariel' );
+INSERT INTO customers( id, name ) VALUES(5, 'Ariel' );
 ```{{exec}}
 
 This `INSERT` failed becuse `LOCAL_QUORUM` for replication factor `3` is two and only one node was available.
@@ -96,7 +99,7 @@ This `INSERT` failed becuse `LOCAL_QUORUM` for replication factor `3` is two and
 ✅ Insert Kalani at consistency level `ALL`
 ```
 CONSISTENCY ALL;
-INSERT INTO customers( id, name ) VALUES(3, 'Kalani' );
+INSERT INTO customers( id, name ) VALUES(6, 'Kalani' );
 ```{{exec}}
 
 This `INSERT` failed becuse `ALL` for replication factor `3` is three and only one node was available.
@@ -107,5 +110,18 @@ Run a query to see what data is actually in the table
 
 ✅ Retrieve all the data
 ```
+SELECT * FROM customers;
+```{{exec}}
+
+The `SELECT` failed!
+It failed because the consistency level is still `ALL`.
+That requires as many nodes as the replication factor (3) to ACK.
+Since there is only one node it fails,
+
+Set the consistency level to `ONE` and try again.
+
+✅ Set the consistency level to `ONE` and retrieve all the data
+```
+CONSISTENCY ONE;
 SELECT * FROM customers;
 ```{{exec}}
