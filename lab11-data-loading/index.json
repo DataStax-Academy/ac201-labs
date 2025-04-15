@@ -14,7 +14,6 @@
       "assets": {
         "host01": [
           {"file": "states.csv", "target": "/assets", "chmod": "+r"},
-          {"file": "states.json", "target": "/assets", "chmod": "+r"}
         ]
       },
       "intro": {

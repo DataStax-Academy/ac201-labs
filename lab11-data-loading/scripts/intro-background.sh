@@ -130,7 +130,6 @@ done
 mkdir -p $HOME_DIR/data
 
 mv /assets/states.csv $HOME_DIR/data/states.csv
-mv /assets/states.json $HOME_DIR/data/states.json
 
 sudo chown -R cassandra-user:cassandra $HOME_DIR
 

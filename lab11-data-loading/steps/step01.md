@@ -1,7 +1,7 @@
 In this step, you will build a table and load data.
-You will use the `COPY FROM` command to puplate the table from a CSV and a JSON file.
+You will use the `COPY FROM` command to puplate the table from a CSV file.
 
-✅ Use the **Editor** tab to open a Theia window and examine `states.csv` and `states.json` in `/filesystem/home/cassandra-user/data/`
+✅ Use the **Editor** tab to open a Theia window and examine `states.csv` in `/filesystem/home/cassandra-user/data/`
 
 The CSV file contains data for Alabama - Missouri and the JSON file contains data for Montana - Wyoming.
 
@@ -46,7 +46,8 @@ Use `COPY FROM` to laoad the JSON data.
 
 ✅ Use the `geography` keyspace
 ```
-COPY states FROM '~/data/states.json';
+COPY states (name, abbreviation, population, capital) 
+  FROM '~/data/states.csv' with HEADER='true';
 ```{{exec}}
 
 Verify that the data was loaded
