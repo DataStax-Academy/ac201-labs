@@ -5,7 +5,7 @@ In this step, you will use `INSERT`, `UPDATE`, and upserts.
  /home/cassandra-user/nodeA/bin/cqlsh 172.30.1.10
 ```{{exec}}
 
-You will create the table in the 'dining' keyspace.
+You will create a table in the 'league' keyspace.
 
 ✅ Create the `league` keyspace.
 ```
