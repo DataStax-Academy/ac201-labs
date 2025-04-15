@@ -17,7 +17,7 @@ CREATE KEYSPACE league WITH replication = {
 
 ✅ Use the `league` keyspace.
 ```
-USE dining;
+USE league;
 ```{{exec}}
 
 This table track scores for a sports league.
@@ -41,8 +41,30 @@ CREATE TABLE scores (
 );
 ```{{exec}}
 
-✅ Populate the table
+✅ Enter the week 1 scores
 ```
-INSERT INTO scores (team, player, week score) 
-  VALUES ('SA', 'Dave', 1, 397 )
+INSERT INTO scores (team, player, week, score) VALUES ('SA', 'Dave', 1, 397);
+INSERT INTO scores (team, player, week, score) VALUES ('SA', 'Tyson', 1, 414);
+INSERT INTO scores (team, player, week, score) VALUES ('EP', 'Rick', 1, 404);
 ```{{exec}}
+
+✅ Execute a query to retrieve all of the scores
+```
+SELECT * from score;
+```{{exec}}
+
+✅ Enter the week 1 scores
+```
+INSERT INTO scores (team, player, week, score) VALUES ('SA', 'Dave', 1, 442);
+INSERT INTO scores (team, player, week, score) VALUES ('SA', 'Tyson', 2, 430);
+INSERT INTO scores (team, player, week, score) VALUES ('EP', 'Rick', 2, 412);
+```{{exec}}
+
+✅ Execute a query to retrieve all of the scores
+```
+SELECT * from score;
+```{{exec}}
+
+[upsert](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab09/upsert.jpg)
+
+
