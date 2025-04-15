@@ -1,9 +1,10 @@
 In this step, you will start a three-node Cassandra cluster.
 
-	| Server directory | IP | port | 
-| ----------- | ----------- | ---- |
-| Header | Title | AAA |
-| Paragraph | Text | BBB |
+| Server | IP | Port |
+| ----------- | ----------- | ----------- |
+| nodeA | 172.30.1.10 | 9042 |
+| nodeB | 172.30.1.11 | 9043 |
+| nodeC | 172.30.1.12 | 9044 |
 
 ✅ Start by connecting to the cluster with `cqlsh` 
 ```
