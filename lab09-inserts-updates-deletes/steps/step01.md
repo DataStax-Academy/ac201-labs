@@ -65,6 +65,6 @@ INSERT INTO scores (team, player, week, score) VALUES ('EP', 'Rick', 2, 412);
 SELECT * from score;
 ```{{exec}}
 
-[upsert](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab09/upsert.jpg)
+![upsert](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab09/upsert.jpg)
 
 
