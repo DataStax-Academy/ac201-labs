@@ -1,7 +1,7 @@
 {
     "private": false,
     "title": "AC201 Lab 11: Data Loading",
-    "description": "Load data with COPY FROM",
+    "description": "Load data with COPY FROM.",
     "difficulty": "Beginner",
     "time": "15 minutes",
     "details": {
