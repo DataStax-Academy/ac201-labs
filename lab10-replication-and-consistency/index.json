@@ -12,7 +12,7 @@
       },
       "steps": [
         {
-          "title": "Step 1: AAAAAAAAA",
+          "title": "Step 1: Start a Cassandra Cluster",
           "text": "steps/step01.md"
         }
       ],
