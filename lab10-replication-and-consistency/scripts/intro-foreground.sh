@@ -20,13 +20,27 @@ echo " ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══�
 
 echo -ne "\n\n Configuring the lab environment " > /dev/tty 2>&1
 
-until \
-  /home/cassandra-user/nodeA/bin/cqlsh 172.30.1.10 9042 -e "DESCRIBE KEYSPACES;" > /dev/null 2>&1 && \
-  /home/cassandra-user/nodeB/bin/cqlsh 172.30.1.11 9043 -e "DESCRIBE KEYSPACES;" > /dev/null 2>&1 && \
-  /home/cassandra-user/nodeC/bin/cqlsh 172.30.1.12 9044 -e "DESCRIBE KEYSPACES;" > /dev/null 2>&1
-do
-     sleep 1
-     echo -n '.' > /dev/tty 2>&1
+#!/bin/bash
+
+# List of directories to wait for
+directories=(~/nodeA ~/nodeB ~/nodeC)
+
+# Loop until all directories exist
+while true; do
+  all_exist=true
+  for dir in "${directories[@]}"; do
+    if [ ! -d "$dir" ]; then
+      all_exist=false
+      break
+    fi
+  done
+
+  if $all_exist; then
+    break
+  else
+    sleep 1
+    echo -n '.' > /dev/tty 2>&1
+  fi
 done
 
 echo -e "\n\n" > /dev/tty 2>&1
