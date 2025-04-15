@@ -37,7 +37,7 @@ For this lab, you will create a table of states.
 CREATE TABLE states (
     name text PRIMARY KEY,
     abbreviation text,
-    population integer,
+    population int,
     capital text
 );
 ```{{exec}}

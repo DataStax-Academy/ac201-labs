@@ -129,8 +129,8 @@ done
 
 mkdir -p $HOME_DIR/data
 
-mv /assets/al-mo.csv $HOME_DIR/data/al-mo.csv
-mv /assets/mt-wy.json $HOME_DIR/data/mt-wy.json
+mv /assets/states.csv $HOME_DIR/data/states.csv
+mv /assets/states.json $HOME_DIR/data/states.json
 
 sudo chown -R cassandra-user:cassandra $HOME_DIR
 
