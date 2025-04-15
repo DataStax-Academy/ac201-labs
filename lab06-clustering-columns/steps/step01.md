@@ -1,6 +1,5 @@
 In this step, you will build a table with a partition key column and two clustering columns.
-Clustering columns in determine the order of rows within a partition. 
-By defining clustering columns in your table schema, you can control how data is sorted and retrieved within each partition, enabling more advanced and efficient queries.
+Since this table has multiple clustering columns, partitions may contain more than one row.
 
 ✅ Start by connecting to the cluster with `cqlsh` 
 ```
@@ -64,30 +63,15 @@ INSERT INTO restaurants (name, cuisine, rating, city)
 ```{{exec}}
 
 You should see the restaurants grouped by `cuisine`.
-In addition to the grouping, the restaurants are sorted by `rating` and then `name`.
 
-Now you can query on the clustering columns and sice they are ordered, you can do *order* or *range* queries.
-
-✅ Find the top rated pizza restaurant (remember *5* is the highest rating)
+✅ List all the restaurants
 ```
-SELECT * FROM restaurants WHERE cuisine='pizza' ORDER BY rating DESC LIMIT 1;
+SELECT * FROM restaurants;
 ```{{exec}}
 
-✅ Find the two lowest rated the seafood restaurants
+You can use `cuisine` in 'WHERE' clauses because it is the partition key.
+
+✅ Find all the seafood restaurants
 ```
-SELECT * FROM restaurants WHERE cuisine='seafood' LIMIT 2;
+SELECT * FROM restaurants WHERE cuisine='seafood';
 ```{{exec}}
-
-✅ Find all the Chinese restaurants with 2, 3 or 4 ratings
-```
-SELECT * FROM restaurants WHERE cuisine='seafood' AND rating >= 1 AND rating <= 4 ;
-```{{exec}}
-
-
-✅ Find the best seafood restaurants in Seattle
-```
-SELECT * FROM restaurants WHERE city='Seattle' AND cuisine='seafood' AND rating=5;
-```{{exec}}
-
-To enable querying on non-primary key columns, Cassandra 5.0 introduced Storage-Attached Indexing (SAI). 
-Use SAI allows to create indexes on non-key colums facilitating efficient WHERE clause filtering.
