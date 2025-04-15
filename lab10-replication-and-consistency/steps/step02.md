@@ -66,6 +66,7 @@ Click on the **Tab1**
 Nodetool should still be running. 
 You should see that the servers at `172.30.1.11`(nodeB) and `172.30.1.12`(nodeC) are in the **DN** state.
 Server `172.30.1.11`(nodeA) should still be in the **UN** state.
+(You might have to wait a bit since the command only runs every 5 seconds.)
 
 ![nodeB and nodeC are down](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab10/two-down.jpg)
 
@@ -125,3 +126,45 @@ Set the consistency level to `ONE` and try again.
 CONSISTENCY ONE;
 SELECT * FROM customers;
 ```{{exec}}
+
+You should see the original 3 customers(Jie, Raha, and Charlie) plus Tal.
+
+![4 customers](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab10/four.jpg)
+
+You are going to restart nodeB and nodeC and see what data is in the database.
+
+✅ Switch to Tab3
+
+Click on the **Tab3**
+
+✅ Start nodeB and nodeC as `cassandra-user`
+```
+su - cassandra-user -c 'nodeB/bin/cassandra > /dev/null 2>&1 &'
+su - cassandra-user -c 'nodeB/bin/cassandra > /dev/null 2>&1 &'
+```{{exec}}
+
+Wait for the servers to start.
+
+✅ Switch to Tab1
+
+Click on the **Tab1**
+
+Wait until all three servers are in the `UN` state.
+
+✅ Switch to Tab2
+
+Click on the **Tab2**
+
+You should still be in the `cqlsh` shell.
+Set the consistency level to `ALL` and retrieve all the data.
+
+✅ Retrieve the data
+```
+CONSISTENCY ALL;
+SELECT * FROM customers;
+```{{exec}}
+
+You should see the same 4 customers as before.
+Ariel and Kalani were never written to the database because there were not enough servers to meet the consistency level.
+
+![4 customers](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab10/four.jpg)
