@@ -69,8 +69,6 @@ declare -A STORAGE_PORTS=( [nodeA]=7000 [nodeB]=7001 [nodeC]=7002 )
 declare -A NATIVE_PORTS=( [nodeA]=9042 [nodeB]=9043 [nodeC]=9044 )
 declare -A JMX_PORTS=( [nodeA]=7199 [nodeB]=7200 [nodeC]=7201 )
 
-
-
 for NODE in nodeA nodeB nodeC; do
 
   CONF_DIR="$HOME_DIR/$NODE/conf"
