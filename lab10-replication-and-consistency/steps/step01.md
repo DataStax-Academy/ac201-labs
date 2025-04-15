@@ -32,3 +32,44 @@ Wait until all three servers are running in the Up and Normal (`UN`) state.
 ![cluster running](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab10/cluster-running.jpg)
 
 Once all three servers are running, click on the **+** icon (next to **Tab1**) to create a new tab.
+Next, click on **Tab2** to switch tabs.
+
+✅ Change the user in **Tab2** to `cassandra-user`
+```
+su - cassandra-user
+```{{exec}}
+
+✅ Connect to the cluster with `cqlsh` 
+```
+nodeA/bin/cqlsh 172.30.1.10
+```{{exec}}
+
+Create a keyspace in the cluster.
+The keyspace will have replication factor `3` so you can experiment with consistency levels.
+
+✅ Create the `store` keyspace
+```
+CREATE KEYSPACE store WITH replication = {
+  'class':'NetworkTopologyStrategy',
+  'datacenter1':3
+};
+```{{exec}}
+
+✅ Use the `store` keyspace
+```
+USE store;
+```{{exec}}
+
+For this lab, you will create a customers table.
+
+✅ Create the table
+```
+CREATE TABLE customers (
+  state text,
+  first_name text,
+  last_name text,
+  id int,
+  status text
+  PRIMARY KEY((state), last_name, first_name, id)
+);
+```{{exec}}
