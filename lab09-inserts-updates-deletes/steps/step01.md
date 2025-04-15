@@ -1,4 +1,4 @@
-In this step, you will build a table with a partition key column and three clustering columns.
+In this step, you will use `INSERT`, `UPDATE`, and upserts.
 
 ✅ Start by connecting to the cluster with `cqlsh` 
 ```
@@ -53,10 +53,10 @@ INSERT INTO scores (team, player, week, score)
 
 ✅ Execute a query to retrieve all of the scores
 ```
-SELECT * FROM score;
+SELECT * FROM scores;
 ```{{exec}}
 
-✅ Enter the week 1 scores
+✅ Enter the week 2 scores
 ```
 INSERT INTO scores (team, player, week, score) 
   VALUES ('SA', 'Dave', 1, 442);
@@ -68,7 +68,7 @@ INSERT INTO scores (team, player, week, score)
 
 ✅ Execute a query to retrieve all of the scores
 ```
-SELECT * FROM score;
+SELECT * FROM scores;
 ```{{exec}}
 
 Take a look at the results. 
@@ -90,12 +90,13 @@ You can fix Dave's scores by doing an `UPDATE` for week 1 and an `INSERT` for we
 UPDATE scores SET score = 397 
   WHERE team = 'SA' AND player = 'Dave' AND week = 1;
 INSERT INTO scores (team, player, week, score) 
-  VALUES ('SA', 'Dave', B, 442);
+  VALUES ('SA', 'Dave', 2, 442);
 ```{{exec}}
 
 ✅ Execute a query to retrieve all of the scores
 ```
-SELECT * FROM score WHERE team = 'SA' player = 'Dave'; 
+SELECT * FROM scores WHERE team = 'SA' AND player = 'Dave'; 
 ```{{exec}}
 
 You should see Dave's scores for week 1 and week 2.
+
