@@ -1,13 +1,13 @@
 {
     "private": false,
-    "title": "AC201 Lab 07: Clustering Columns",
-    "description": "Dig deeper with clustering columns",
+    "title": "AC201 Lab 08: Multiple Clustering Columns",
+    "description": "Queries with multiple clustering columns.",
     "difficulty": "Beginner",
     "time": "10 minutes",
     "details": {
       "steps": [
         {
-          "title": "Step 1: Use clustering columns",
+          "title": "Step 1: Use multiple clustering columns",
           "text": "steps/step01.md"
         }
       ],

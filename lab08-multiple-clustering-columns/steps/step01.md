@@ -1,5 +1,4 @@
-In this step, you will build a table with a partition key column and two clustering columns.
-Since this table has multiple clustering columns, partitions may contain more than one row.
+In this step, you will build a table with a partition key column and three clustering columns.
 
 ✅ Start by connecting to the cluster with `cqlsh` 
 ```
@@ -22,46 +21,46 @@ USE dining;
 ```{{exec}}
 
 The 'restaurants' table will be partitioned or grouped by `cuisine`. 
-The first clustering column, `rating` orders the restaurants.
-The `name` column makes the primary key unique.
+Cassandra will use the `rating` and `cost` columns to order the rows in the partition.
+Values for `rating` and `cost` are 1-5, with 5 being the highest.
+The `name` column is primarily for uniqueness.
 
 ✅ Create the table
 ```
 CREATE TABLE restaurants (
   cuisine text,
   rating int,
+  cost int,
   name text,
   city text,
-  PRIMARY KEY ((cuisine), rating, name)
+  PRIMARY KEY ((cuisine), rating, cost, name)
 );
 ```{{exec}}
 
 ✅ Populate the table
 ```
-INSERT INTO restaurants (name, cuisine, rating, city)
-  VALUES ('Luigi''s Pizza', 'pizza', 5, 'Dallas');
-INSERT INTO restaurants (name, cuisine, rating, city)
-  VALUES ('Golden Wok', 'chinese', 4, 'Dallas');
-INSERT INTO restaurants (name, cuisine, rating, city)
-  VALUES ('Sea Breeze', 'seafood', 3, 'Dallas');
-INSERT INTO restaurants (name, cuisine, rating, city)
-  VALUES ('Pizza Haven', 'pizza', 2, 'Dallas');
-INSERT INTO restaurants (name, cuisine, rating, city)
-  VALUES ('Panda Garden', 'chinese', 5, 'Dallas');
-INSERT INTO restaurants (name, cuisine, rating, city)
-  VALUES ('Captain''s Catch', 'seafood', 4, 'Dallas');
-INSERT INTO restaurants (name, cuisine, rating, city)
-  VALUES ('Slice of Heaven', 'pizza', 3, 'Seattle');
-INSERT INTO restaurants (name, cuisine, rating, city)
-  VALUES ('Mandarin Express', 'chinese', 2, 'Seattle');
-INSERT INTO restaurants (name, cuisine, rating, city)
-  VALUES ('Neptune''s Table', 'seafood', 5, 'Seattle');
-INSERT INTO restaurants (name, cuisine, rating, city)
-  VALUES ('Cheesy Bites', 'pizza', 4, 'Seattle');
-INSERT INTO restaurants (name, cuisine, rating, city)
-  VALUES ('Dragon Palace', 'chinese', 3, 'Seattle');
-INSERT INTO restaurants (name, cuisine, rating, city)
-  VALUES ('Ocean Delight', 'seafood', 1, 'Seattle');
+INSERT INTO restaurants (name, cuisine, rating, cost, city)
+  VALUES ('Prime Cut', 'steakhouse', 5, 4, 'New York');
+INSERT INTO restaurants (name, cuisine, rating, cost, city)
+  VALUES ('Sakura Sushi', 'sushi', 4, 3, 'New York');
+INSERT INTO restaurants (name, cuisine, rating, cost, city)
+  VALUES ('The Beef House', 'steakhouse', 3, 5, 'New York');
+INSERT INTO restaurants (name, cuisine, rating, cost, city)
+  VALUES ('Tokyo Bites', 'sushi', 5, 5, 'New York');
+INSERT INTO restaurants (name, cuisine, rating, cost, city)
+  VALUES ('Grill & Flame', 'steakhouse', 4, 2, 'New York');
+INSERT INTO restaurants (name, cuisine, rating, cost, city)
+  VALUES ('Wasabi World', 'sushi', 2, 1, 'New York');
+INSERT INTO restaurants (name, cuisine, rating, cost, city)
+  VALUES ('Desert Steakhouse', 'steakhouse', 5, 3, 'Phoenix');
+INSERT INTO restaurants (name, cuisine, rating, cost, city)
+  VALUES ('Sushi Zen', 'sushi', 3, 2, 'Phoenix');
+INSERT INTO restaurants (name, cuisine, rating, cost, city)
+  VALUES ('Cactus Grill', 'steakhouse', 2, 1, 'Phoenix');
+INSERT INTO restaurants (name, cuisine, rating, cost, city)
+  VALUES ('Samurai Sushi', 'sushi', 4, 5, 'Phoenix');
+INSERT INTO restaurants (name, cuisine, rating, cost, city)
+
 ```{{exec}}
 
 You should see the restaurants grouped by `cuisine`.
