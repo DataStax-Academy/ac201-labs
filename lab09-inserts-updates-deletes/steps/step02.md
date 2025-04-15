@@ -38,3 +38,5 @@ DELETE FROM scores WHERE team = 'EP';
 ```
 SELECT * FROM scores;
 ```{{exec}}
+
+You should see that all the rows of the *EP* partition have been deleted.
