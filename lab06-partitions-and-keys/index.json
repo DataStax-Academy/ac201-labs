@@ -7,7 +7,7 @@
     "details": {
       "steps": [
         {
-          "title": "Step 1: Build the restaurants table",
+          "title": "Step 1: Work with the partition key",
           "text": "steps/step01.md"
         }
       ],
