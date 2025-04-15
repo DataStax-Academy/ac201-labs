@@ -13,8 +13,8 @@
       ],
       "assets": {
         "host01": [
-          {"file": "al-mo.csv", "target": "/assets", "chmod": "+r"},
-          {"file": "mt-wy,json", "target": "/assets", "chmod": "+r"}
+          {"file": "states.csv", "target": "/assets", "chmod": "+r"},
+          {"file": "states.json", "target": "/assets", "chmod": "+r"}
         ]
       },
       "intro": {
