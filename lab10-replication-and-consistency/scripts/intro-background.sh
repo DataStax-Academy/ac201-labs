@@ -107,6 +107,7 @@ for NODE in nodeA nodeB nodeC; do
   grep -q "Dcassandra.storagedir" "$ENV_SH" || \
     echo "JVM_OPTS=\"\$JVM_OPTS -Dcassandra.storagedir=$HOME_DIR/$NODE\"" >> "$ENV_SH"
 
+  echo "JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=${IPS[$NODE]}\"" >> "$ENV_SH"
   echo "JVM_OPTS=\"\$JVM_OPTS -Xms512M -Xmx512M\"" >> "$ENV_SH"
 
   # Create data directories
