@@ -77,7 +77,7 @@ Now you can query on the clustering columns and sice they are ordered, you can d
 
 ✅ Find all the steakhouses rated 3 and above
 ```
-ELECT * FROM restaurants 
+SELECT * FROM restaurants 
   WHERE cuisine='steakhouse' AND rating >= 3;
 ```{{exec}}
 
