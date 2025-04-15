@@ -20,9 +20,15 @@ Use the Linux `watch` command to run `nodetool status` every five seconds to see
 watch -n 5 nodeA/bin/nodetool status
 ```{{exec}}
 
-You may see errors if `nodetool` tries to connect before any servers start.
+You may see one or both of the following errors if `nodetool` tries to connect before any servers start.
+
+![failed to connect](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab10/failed-to-connect.jpg)
+
+![illegal argument](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab10/illegal-argument.jpg)
+
 Since `nodetool` runs every five seconds, the errors will go away once the servers start.
 Wait until all three servers are running in the Up and Normal (`UN`) state.
 
+![cluster running](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab10/cluster-running.jpg)
 
 Once all three servers are running, click on the **+** icon (next to **Tab1**) to create a new tab.
