@@ -1,6 +1,7 @@
 In this hands-on lab, you will:
 
-- Build tables with multi-row partitions
-- Execute searches by partitions
+- Build a table with clustering columns
+- Use `ORDER BY` in queries
+- Execute range queries
 
 ❗ <strong>Warning:</strong> Wait for the *Lab environment ready!* message before you click *START*
