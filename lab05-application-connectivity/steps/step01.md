@@ -1,6 +1,6 @@
 In this step, you will build a table and access it from Java and Python apps. 
 
-Use the **Editor** tab to open a Theia window and examine the CQL file: `/filesystem/home/cassandra-user/build-database.cql`
+✅ Use the **Editor** tab to open a Theia window and examine the CQL file: `/filesystem/home/cassandra-user/build-database.cql`
 
 The file has commands to create the `world` keyspace.
 Next, there are commands to create and populate a table of countries.
