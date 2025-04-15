@@ -24,4 +24,5 @@ You may see errors if `nodetool` tries to connect before any servers start.
 Since `nodetool` runs every five seconds, the errors will go away once the servers start.
 Wait until all three servers are running in the Up and Normal (`UN`) state.
 
-`su -cassandra-user`{{execute Tab 2}}
+
+Once all three servers are running, click on the **+** icon (next to **Tab1**) to create a new tab.
