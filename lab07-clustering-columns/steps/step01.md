@@ -88,5 +88,6 @@ SELECT * FROM restaurants WHERE cuisine='seafood' AND rating >= 1 AND rating <= 
 SELECT * FROM restaurants WHERE city='Seattle' AND cuisine='seafood' AND rating=5;
 ```{{exec}}
 
+That query failed because `city` is not a primary key column.
 To enable querying on non-primary key columns, Cassandra 5.0 introduced Storage-Attached Indexing (SAI). 
-Use SAI allows to create indexes on non-key colums facilitating efficient WHERE clause filtering.
+Use SAI to create indexes on non-primary key columns and facilitate efficient `WHERE` clause filtering.
