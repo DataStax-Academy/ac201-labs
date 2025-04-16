@@ -1,6 +1,5 @@
 In this step, you will put some data in SSTables and the memtable. 
 
-
 ✅ Use `cqlsh` to connect to the database
 ```
 nodeA/bin/cqlsh 172.30.1.10
