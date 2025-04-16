@@ -50,6 +50,9 @@ COPY states (name, abbreviation, population, capital)
   FROM '~/data/states.csv' with HEADER='true';
 ```{{exec}}
 
+Since there are 50 states you should see 50 rows imported.
+![loaded](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab11/loaded.jpg)
+
 Verify that the data was loaded
 ✅ Display the state data
 ```
