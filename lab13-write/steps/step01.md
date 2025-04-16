@@ -1,5 +1,22 @@
-In this step, you will build a table and load data.
+In this step, you will look at the `commitlog` and `data` directories. 
+Next you will build a table and load some data.
 
+Since you have not written anything to the database the `commitlog` directory will be empty.
+
+✅ Verify that the `commitlog` directory is empty
+```
+ls -l nodeA/commitlog/
+```{{exec}}
+
+The `data/data` directory will have subdirectories for the various system keyspaces.
+
+✅ Look at the data directory
+```
+ls -l nodeA/data/data/
+```{{exec}}
+
+You should see subdirectories for system keyspaces.
+![system](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab13/data-data.jpg)
 
 ✅ Use `cqlsh` to connect to the database
 ```
@@ -56,3 +73,8 @@ INSERT INTO inventory(id, make, model, year)
 ```
 SELECT * FROM inventory;
 ```{{exec}}
+
+✅ Quit `cqlsh`
+```
+Ctrl-C
+```{{exec interrupt}}
