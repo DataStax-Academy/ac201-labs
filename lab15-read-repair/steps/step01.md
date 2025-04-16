@@ -13,58 +13,46 @@ nodeA/bin/cqlsh 172.30.1.10
 ```{{exec}}
 
 Create a keyspace in the cluster.
-Set the replication factor to `3`.
 
-✅ Create the `cars` keyspace
+✅ Create the `club` keyspace
 ```
-CREATE KEYSPACE cars WITH replication = {
+CREATE KEYSPACE club WITH replication = {
   'class':'NetworkTopologyStrategy',
-  'datacenter1':3
+  'datacenter1':1
 };
 ```{{exec}}
 
-✅ Use the `cars` keyspace
+✅ Use the `club` keyspace
 ```
-USE cars;
+USE club;
 ```{{exec}}
 
-For this lab, you will create a table of cars.
+For this lab, you will create a table of members.
 
 ✅ Create the table
 ```
-CREATE TABLE inventory (
+CREATE TABLE members (
   id int PRIMARY KEY,
-  make text,
-  model text,
-  year int
+  name text,
+  email text,
+  status text
 );
 ```{{exec}}
 
 
-✅ Insert some cars into the table
+✅ Insert a member into the table
 ```
-INSERT INTO inventory(id, make, model, year) 
-  values(1001, 'Dodge', 'Challenger', 1971);
-INSERT INTO inventory(id, make, model, year) 
-  values(1002, 'Ford',  'Mustang',    1968);
-INSERT INTO inventory(id, make, model, year) 
-  values(1003, 'Chevy', 'Camaro',     1969);
-INSERT INTO inventory(id, make, model, year) 
-  values(1004, 'Dodge', 'Daytona',    1969);
-INSERT INTO inventory(id, make, model, year) 
-  values(1005, 'Dodge', 'Challenger', 1972);
-INSERT INTO inventory(id, make, model, year) 
-  values(1006, 'Ford', ' Mustang',    1971);
-INSERT INTO inventory(id, make, model, year) 
-  values(1007, 'Dodge', 'Charger',    1969);
+INSERT INTO members (id, name, email, status) 
+    VALUES (1001, 'Luka Quinn', 'luka@example.com', 'silver');
 ```{{exec}}
 
-✅ View the table
+✅ View the data from the table
 ```
-SELECT * FROM inventory;
+SELECT * FROM members;
 ```{{exec}}
 
-✅ Shut `cqlsh` down
+✅ Quit `cqlsh`
 ```
 exit
-```{{exec}}
+```{{exec interrupt}}
+

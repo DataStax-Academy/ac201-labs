@@ -23,35 +23,25 @@ You will use `watch` to run `nodetool` until nodeC is in the `Down/Normal` (`DN`
 watch -n 5 nodeA/bin/nodetool status
 ```{{exec}}
 
-![nodeC down](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab12/nodeC-down.jpg)
-
 ✅ Once nodeC has shut down use Ctrl-C stop the `watch`
 ```
 Ctrl-C
 ```{{exec interrupt}}
 
-✅ Use `cqlsh` to re-connect to the database
-```
-nodeA/bin/cqlsh 172.30.1.10
-```{{exec}}
-
-✅ Use the `cars` keyspace
-```
-use cars;
-```{{exec}}
-
-To test hinted handoff, you are going to insert car (a 1963 Corvette) into the database.
+To read reair, you are going to insert car (a 1963 Corvette) into the database.
 Since nodeC is down, the Corvette is only stored on nodeA and nodeB.
 
 ✅ Insert the Corvette
 ```
-INSERT INTO inventory(id, make, model, year) 
-  values(1008, 'Chevy', 'Corvette', 1963);
+nodeA/bin/cqlsh 172.30.1.10 
+  -e "INSERT INTO inventory(id, make, model, year) 
+      values(1008, 'Chevy', 'Corvette', 1963);"
 ```{{exec}}
 
 ✅ Verify that the Corvette is in the table
 ```
-SELECT * FROM inventory;
+nodeA/bin/cqlsh 172.30.1.10 
+  -e "SELECT * FROM inventory;"
 ```{{exec}}
 
 ✅ Shut `cqlsh` down
