@@ -14,41 +14,41 @@ nodeA/bin/cqlsh 172.30.1.10
 
 Create a keyspace in the cluster.
 
-✅ Create the `club` keyspace
+✅ Create the `restaurant` keyspace
 ```
-CREATE KEYSPACE club WITH replication = {
+CREATE KEYSPACE restaurant WITH replication = {
   'class':'NetworkTopologyStrategy',
   'datacenter1':1
 };
 ```{{exec}}
 
-✅ Use the `club` keyspace
+✅ Use the `restaurant` keyspace
 ```
-USE club;
+USE restaurant;
 ```{{exec}}
 
 For this lab, you will create a table of members.
 
 ✅ Create the table
 ```
-CREATE TABLE members (
+CREATE TABLE menu (
   id int PRIMARY KEY,
-  name text,
-  email text,
-  status text
+  item text,
+  price decimal
 );
 ```{{exec}}
 
 
-✅ Insert a member into the table
+✅ Insert a couple of items into the table
 ```
-INSERT INTO members (id, name, email, status) 
-    VALUES (1001, 'Luka Quinn', 'luka@example.com', 'silver');
+INSERT INTO menu (id, item, price) VALUES (1001, 'steak', 35.99);
+INSERT INTO menu (id, item, price) VALUES (1002, 'salmon', 25.99);
+INSERT INTO menu (id, item, price) VALUES (1003, 'ribs', 24.50);
 ```{{exec}}
 
 ✅ View the data from the table
 ```
-SELECT * FROM members;
+SELECT * FROM menu;
 ```{{exec}}
 
 ✅ Quit `cqlsh`
