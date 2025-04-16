@@ -1,9 +1,11 @@
 In this step, you will look at the `commitlog` and `data` directories. 
 Next you will build a table and load some data.
 
-Since you have not written anything to the database the `commitlog` directory will be empty.
+Even though you have not written anything to the database the `commitlog` directory will contain two files.
+When Cassandra starts, it pre-allocates a number of empty commit log segment files.
+These files are ready to receive write operations immediately, improving performance by avoiding costly disk allocation during writes.
 
-✅ Verify that the `commitlog` directory is empty
+✅ Verify that the `commitlog` directory is not empty
 ```
 ls -l nodeA/data/commitlog/
 ```{{exec}}
@@ -54,19 +56,19 @@ CREATE TABLE inventory (
 ✅ Insert some cars into the table
 ```
 INSERT INTO inventory(id, make, model, year) 
-  values(1001, 'Dodge', 'Challenger', 1971);
+    values(1001, 'Dodge', 'Challenger', 1971);
 INSERT INTO inventory(id, make, model, year) 
-  values(1002, 'Ford',  'Mustang',    1968);
+    values(1002, 'Ford',  'Mustang',    1968);
 INSERT INTO inventory(id, make, model, year) 
-  values(1003, 'Chevy', 'Camaro',     1969);
+    values(1003, 'Chevy', 'Camaro',     1969);
 INSERT INTO inventory(id, make, model, year) 
-  values(1004, 'Dodge', 'Daytona',    1969);
+    values(1004, 'Dodge', 'Daytona',    1969);
 INSERT INTO inventory(id, make, model, year) 
-  values(1005, 'Dodge', 'Challenger', 1972);
+    values(1005, 'Dodge', 'Challenger', 1972);
 INSERT INTO inventory(id, make, model, year) 
-  values(1006, 'Ford', ' Mustang',    1971);
+    values(1006, 'Ford', ' Mustang',    1971);
 INSERT INTO inventory(id, make, model, year) 
-  values(1007, 'Dodge', 'Charger',    1969);
+    values(1007, 'Dodge', 'Charger',    1969);
 ```{{exec}}
 
 ✅ View the table
