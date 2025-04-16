@@ -10,7 +10,7 @@ The CSV file contains data for Alabama - Missouri and the JSON file contains dat
 
 
 
-✅ Use `cqlsh` to connect to the databse
+✅ Use `cqlsh` to connect to the database
 ```
 nodeA/bin/cqlsh 172.30.1.10
 ```{{exec}}
