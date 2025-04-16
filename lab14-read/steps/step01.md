@@ -69,7 +69,3 @@ nodeA/bin/cqlsh 172.30.1.10 -e \
    email = 'lquinn@example.com' WHERE id = 1001;"
 ```{{exec}}
 
-✅ Retrieve the data
-```
-nodeA/bin/cqlsh 172.30.1.10 -e "SELECT * FROM club.members;"
-```{{exec}}
