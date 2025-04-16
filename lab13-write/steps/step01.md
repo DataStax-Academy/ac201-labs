@@ -5,7 +5,7 @@ Since you have not written anything to the database the `commitlog` directory wi
 
 ✅ Verify that the `commitlog` directory is empty
 ```
-ls -l nodeA/commitlog/
+ls -l nodeA/data/commitlog/
 ```{{exec}}
 
 The `data/data` directory will have subdirectories for the various system keyspaces.
@@ -76,5 +76,5 @@ SELECT * FROM inventory;
 
 ✅ Quit `cqlsh`
 ```
-Ctrl-C
+exit
 ```{{exec interrupt}}
