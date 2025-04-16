@@ -22,7 +22,7 @@ fuser -k 9044/tcp
 
 You should see nodeC in the `Down/Normal` (`DN`) state.
 
-![nodeC down](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab11/nodeC-down.jpg)
+![nodeC down](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab12/nodeC-down.jpg)
 
 ✅ Use `cqlsh` to re-connect to the database
 ```
