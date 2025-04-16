@@ -30,14 +30,20 @@ fuser -k 9043/tcp
 Use `nodetool` to verify that nodeC (172.30.1.12) is the only node running.
 Since nodeA is shutting down, you will run `nodetool` from nodeC's homw directory.
 
-✅ Check server status
+✅ Wait for nodeA and nodeB to shut down
 ```
-~/nodeC/bin/nodetool status
+watch -n 5 nodeC/bin/nodetool status
 ```{{exec}}
 
 You should see that only nodeC is in the `UN` state.
 
 ![only nodeC](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab12/only-nodec.jpg)
+
+✅ Once nodeA and nodeB have shut down use Ctrl-C stop the `watch`
+```
+Ctrl-C
+```{{exec interrupt}}
+
 
 ✅ Connnect to nodeC with `cqlsh`
 ```
