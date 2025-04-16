@@ -18,7 +18,7 @@ CREATE KEYSPACE club WITH replication = {
 
 ✅ Use the `club` keyspace
 ```
-USE cars;
+USE club;
 ```{{exec}}
 
 For this lab, you will create a table of members.
@@ -26,7 +26,7 @@ For this lab, you will create a table of members.
 ✅ Create the table
 ```
 CREATE TABLE members (
-  id PRMARY KEY,
+  id int PRIMARY KEY,
   name text,
   email text,
   status text
@@ -53,7 +53,8 @@ nodeA/bin/nodetool flush
 ✅ Update the status field 
 ```
 nodeA/bin/cqlsh 172.30.1.10 -e \
-  "INSERT INTO club.members (id, status) VALUES (1001, 'gold');"
+  "UPDATE club.members SET \
+   status = 'gold' WHERE id = 1001;"
 ```{{exec}}
 
 ✅ Use nodetool to flush the memtable
@@ -64,7 +65,8 @@ nodeA/bin/nodetool flush
 ✅ Update the email field 
 ```
 nodeA/bin/cqlsh 172.30.1.10 -e \
-  "INSERT INTO club.members (id, status) VALUES (1001, 'gold');"
+  "UPDATE club.members SET \
+   email = 'lquinn@example.com' WHERE id = 1001;"
 ```{{exec}}
 
 ✅ Retrieve the data
