@@ -13,7 +13,7 @@
         {
           "title": "Step 2: Write to part of the cluster",
           "text": "steps/step02.md"
-        }
+        },
         {
           "title": "Step 3: Restart the downed node and shut down the others",
           "text": "steps/step03.md"
