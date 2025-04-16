@@ -18,17 +18,17 @@ fuser -k 9044/tcp
 The Linux `watch` command runs a script and refreshes it at an interval you set.
 You will use `watch` to run `nodetool` until nodeC is in the `Down/Normal` (`DN`) state.
 
-✅ Use `nodetool` to verify that nodeC (172.30.112) is shut down
+✅ Use `nodetool` and `watch` to verify that nodeC (172.30.112) is shut down
 ```
 watch -n 5 nodeA/bin/nodetool status
 ```{{exec}}
+
+![nodeC down](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab12/nodeC-down.jpg)
 
 ✅ Once nodeC has shut down use Ctrl-C stop the `watch`
 ```
 Ctrl-C
 ```{{exec interrupt}}
-
-![nodeC down](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab12/nodeC-down.jpg)
 
 ✅ Use `cqlsh` to re-connect to the database
 ```
