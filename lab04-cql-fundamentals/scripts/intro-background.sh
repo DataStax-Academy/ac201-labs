@@ -111,16 +111,11 @@ for NODE in nodeA; do
   # Create data directories
   
   mkdir -p "$HOME_DIR/$NODE/logs"
-  mkdir -p "$HOME_DIR/$NODE/data"
-  mkdir -p "$HOME_DIR/$NODE/commitlog"
   mkdir -p "$HOME_DIR/$NODE/saved_caches"
 
-  chown -R cassandra-user:cassandra "$HOME_DIR/$NODE/logs"
-  chown -R cassandra-user:cassandra "$HOME_DIR/$NODE/data"
-  chown -R cassandra-user:cassandra "$HOME_DIR/$NODE/commitlog"
-  chown -R cassandra-user:cassandra "$HOME_DIR/$NODE/saved_caches"
-  
 done
+
+chown -R cassandra-user:cassandra "$HOME_DIR"
 
 #
 # Start the nodes in the background

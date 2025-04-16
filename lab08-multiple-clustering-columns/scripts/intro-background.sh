@@ -111,8 +111,6 @@ for NODE in nodeA; do
   # Create data directories
   
   mkdir -p "$HOME_DIR/$NODE/logs"
-  mkdir -p "$HOME_DIR/$NODE/data"
-  mkdir -p "$HOME_DIR/$NODE/commitlog"
   mkdir -p "$HOME_DIR/$NODE/saved_caches"
 
 done

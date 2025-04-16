@@ -113,12 +113,8 @@ for NODE in nodeA; do
   
   mkdir -p "$HOME_DIR/$NODE/logs"
   mkdir -p "$HOME_DIR/$NODE/saved_caches"
-
+  
 done
-
-#
-# Handle the uploaded assets
-#
 
 sudo chown -R cassandra-user:cassandra $HOME_DIR
 
