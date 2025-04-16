@@ -33,11 +33,6 @@ The data in the table should be:
 | email | lquinn@example.com |
 | status | gold |
 
-✅ Verify that these are the values in the table
-```
-nodeA/bin/cqlsh 172.30.1.10 -e \
-  "SELECT * FROM club.members"
-```{{exec}}
 
 Where do these values come from?
 The `sstabledump` utility exports the contents of SSTable files in JSON format
@@ -49,7 +44,7 @@ nodeA/tools/bin/sstabledump \
   nodeA/data/data/club/members-*/nb-1-big-Data.db
 ```{{exec}}
 
-You should see the all values are from the first `INSERT` you did.
+You should see that all the values are from the first `INSERT` you did.
 
 ✅ Look at the contents of the newer SSTable file
 ```
@@ -58,7 +53,6 @@ nodeA/tools/bin/sstabledump \
 ```{{exec}}
 
 This file should only contain the updated `status` value - `gold`.
-
 
 ✅ Retrieve the data
 ```
@@ -69,5 +63,7 @@ nodeA/bin/cqlsh 172.30.1.10 \
 ![updated row](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab14/updated.jpg)
 
 The query returned the expected values.
-The new email address came from the most recent update and was still in the memtable.
+The `name` (`Luka Quinn`) came from the initial in sert and iss in the older SSTable file: `nb-1-big-Data.db`.
+The `status` (`gold`)  came from the first update and is in the newer SSTable file `nb-2-big-Data.db`.
+The `email` (`lquinn@example.com`) came from the most recent update and was still in the memtable.
 Cassandra had to assemble the current values from the two SSTables and the memtable.
