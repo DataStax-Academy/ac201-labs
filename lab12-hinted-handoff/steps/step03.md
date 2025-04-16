@@ -6,8 +6,7 @@ Next, you will connect to nodeC and see if the hinted handoff propogated the new
 nodeC/bin/cassandra -R > nodeC/logs/cassandra.log 2>&1 &
 ```{{exec}}
 
-The Linux `watch` command runs a script and refreshes it at an interval you set.
-You will use `watch` to run `nodetool` until nodeC is in the `UN` state.
+Use `watch` to run `nodetool` until nodeC is in the `UN` state.
 
 ✅ Wait for nodeC to start
 ```
