@@ -1,5 +1,4 @@
-In this step, you will execute a write with a server shutdown. 
-Then you will restart the server and verify that hinted handoff was successful.
+In this step, you will execute a write with one server shut down. 
 
 There are the IP/Ports for each server.
 
@@ -16,7 +15,7 @@ To explore hinted handoff, you are going to shut one server down.
 fuser -k 9044/tcp
 ```{{exec}}
 
-✅ Use `nodetool` to verify that the nodeC (172.30.112) is shut down
+✅ Use `nodetool` to verify that nodeC (172.30.112) is shut down
 ```
 ~/nodeA/bin/nodetool status
 ```{{exec}}
@@ -47,4 +46,9 @@ INSERT INTO inventory(id, make, model, year)
 ✅ Verify that the Corvette is in the table
 ```
 SELECT * FROM inventory;
+```{{exec}}
+
+✅ Shut `cqlsh` down
+```
+exit
 ```{{exec}}
