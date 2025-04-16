@@ -56,7 +56,7 @@ CREATE TABLE inventory (
 ✅ Insert some cars into the table
 ```
 INSERT INTO inventory(id, year) 
-    values(1001, 1978);
+    values(1001, 'Dodge', 'Challenger', 1971);
 INSERT INTO inventory(id, make, model, year) 
     values(1002, 'Ford',  'Mustang',    1968);
 INSERT INTO inventory(id, make, model, year) 
