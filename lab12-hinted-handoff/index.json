@@ -1,0 +1,29 @@
+{
+    "private": false,
+    "title": "AC201 Lab 12: Hinted handoff",
+    "description": "Read and write data when a node is down",
+    "difficulty": "Beginner",
+    "time": "10 minutes",
+    "details": {
+      "steps": [
+        {
+          "title": "Step 1: Examine gossip",
+          "text": "steps/step01.md"
+        }
+      ],
+      "intro": {
+        "foreground": "scripts/intro-foreground.sh",
+        "background": "scripts/intro-background.sh",
+        "text": "steps/intro.md"
+      },
+      "finish": {
+        "text": "steps/finish.md"
+      }
+    },
+    "environment": {
+      "uilayout": "terminal"
+    },
+    "backend": {
+      "imageid": "ubuntu-4GB"
+    }
+  }
