@@ -28,23 +28,17 @@ watch -n 5 nodeA/bin/nodetool status
 Ctrl-C
 ```{{exec interrupt}}
 
-To read reair, you are going to insert car (a 1963 Corvette) into the database.
-Since nodeC is down, the Corvette is only stored on nodeA and nodeB.
+To demonstrate read reair, you are going to insert a new item into the menu.
+Since nodeC is down, the new item is only stored on nodeA and nodeB.
 
 ✅ Insert the Corvette
 ```
 nodeA/bin/cqlsh 172.30.1.10 
-  -e "INSERT INTO inventory(id, make, model, year) 
-      values(1008, 'Chevy', 'Corvette', 1963);"
+  -e "INSERT INTO restaurant.menu(id, item, price) 
+      values(1004, 'Paella', 24.50);"
 ```{{exec}}
 
-✅ Verify that the Corvette is in the table
+✅ Verify that Paella is in the table
 ```
-nodeA/bin/cqlsh 172.30.1.10 
-  -e "SELECT * FROM inventory;"
-```{{exec}}
-
-✅ Shut `cqlsh` down
-```
-exit
+nodeA/bin/cqlsh 172.30.1.10  -e "SELECT * FROM restaurant.menu;"
 ```{{exec}}

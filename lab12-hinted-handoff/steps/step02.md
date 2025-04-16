@@ -40,7 +40,7 @@ nodeA/bin/cqlsh 172.30.1.10
 use cars;
 ```{{exec}}
 
-To test hinted handoff, you are going to insert car (a 1963 Corvette) into the database.
+To test hinted handoff, you are going to insert a car (a 1963 Corvette) into the database.
 Since nodeC is down, the Corvette is only stored on nodeA and nodeB.
 
 ✅ Insert the Corvette
