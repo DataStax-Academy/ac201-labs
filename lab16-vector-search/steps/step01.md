@@ -5,30 +5,36 @@ nodeA/bin/cqlsh 172.30.1.10
 
 Create a keyspace in the cluster.
 
-✅ Create the `foo` keyspace
+✅ Create the `vectors` keyspace
 ```
-CREATE KEYSPACE foo WITH replication = {
+CREATE KEYSPACE vectors WITH replication = {
   'class':'NetworkTopologyStrategy',
   'datacenter1':1
 };
 ```{{exec}}
 
-✅ Use the `foo` keyspace
+✅ Use the `vectors` keyspace
 ```
-USE foo;
+USE vectors;
 ```{{exec}}
 
-For this lab, you will create a table of states.
+The data you will use in this lab consists of 40 English sentences and ther 512d vector encodings from the Universal Sentence Encoder.
 
 ✅ Create the table
 ```
-CREATE TABLE bar (
-    name text PRIMARY KEY,
+CREATE TABLE sentences (
+    id int PRIMARY KEY,
+    sentence text,
     vals VECTOR<int,3>
 );
 ```{{exec}}
 
-.
+✅ Load the vector data
+```
+COPY sentences (id, sentence, vals)
+  FROM '~/data/vectors.csv' WITH HEADER = 'true';
+```{{exec}}
+
 
 ✅ INSERT
 ```
