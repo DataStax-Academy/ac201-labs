@@ -44,10 +44,10 @@ CREATE TABLE states (
 
 Use `COPY FROM` to laoad the JSON data.
 
-✅ Use the `geography` keyspace
+✅ Load the `geography` keyspace
 ```
 COPY states (name, abbreviation, population, capital) 
-  FROM '~/data/states.csv' with HEADER='true';
+  FROM '~/data/states.csv' WITH HEADER='true';
 ```{{exec}}
 
 Since there are 50 states you should see 50 rows imported.
