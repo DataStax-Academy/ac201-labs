@@ -25,14 +25,14 @@ The data you will use in this lab consists of 40 English sentences and ther 512d
 CREATE TABLE sentences (
     id int PRIMARY KEY,
     sentence text,
-    vals VECTOR<int,3>
+    vals VECTOR<int,512>
 );
 ```{{exec}}
 
 ✅ Load the vector data
 ```
 COPY sentences (id, sentence, vals)
-  FROM '~/data/vectors.csv' WITH HEADER = 'true';
+  FROM '~/data/vectors.csv' WITH DELIMITER = '|';
 ```{{exec}}
 
 
