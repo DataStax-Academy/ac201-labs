@@ -48,14 +48,19 @@ COPY sentences (id, sentence, vals)
 SELECT sentence FROM sentences;
 ```{{exec}}
 
-✅ Finde matches for "The bread is still warm."
+✅ Exit `qlsh`
+```
+exit
+```{{exec}}
+
+✅ Find matches for "The stew was rich and comforting."
 ```
 nodeA/bin/cqlsh 172.30.1.10 -f data/match-food.cql
 ```{{exec}}
 
-✅ Finde matches for "France is on the English Channel."
+✅ Find matches for "France is on the English Channel."
 ```
-nodeA/bin/cqlsh 172.30.1.10 -f data/match-geography.cql
+nodeA/bin/cqlsh 172.30.1.10 -f data/match-music.cql
 ```{{exec}}
 
 
