@@ -29,6 +29,13 @@ CREATE TABLE sentences (
 );
 ```{{exec}}
 
+✅ Create the index
+```
+CREATE INDEX sentences_idx ON sentences(vals) USING 'sai';
+```{{exec}}
+
+
+
 ✅ Load the vector data
 ```
 COPY sentences (id, sentence, vals)
@@ -41,10 +48,14 @@ COPY sentences (id, sentence, vals)
 SELECT sentence FROM sentences;
 ```{{exec}}
 
-✅ Display the state data
+✅ Finde matches for "The bread is still warm."
 ```
-SELECT * FROM bar;
+nodeA/bin/cqlsh 172.30.1.10 -f data/match-food.cql
 ```{{exec}}
 
-The bread is still warm.
+✅ Finde matches for "France is on the English Channel."
+```
+nodeA/bin/cqlsh 172.30.1.10 -f data/match-geography.cql
+```{{exec}}
+
 
