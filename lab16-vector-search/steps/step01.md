@@ -48,7 +48,7 @@ COPY sentences (id, sentence, vals)
 SELECT sentence FROM sentences;
 ```{{exec}}
 
-✅ Exit `qlsh`
+✅ Exit `cqlsh`
 ```
 exit
 ```{{exec}}
@@ -58,7 +58,7 @@ exit
 nodeA/bin/cqlsh 172.30.1.10 -f data/match-food.cql
 ```{{exec}}
 
-✅ Find matches for "France is on the English Channel."
+✅ Find matches for "The guitar sounds a little flat." 
 ```
 nodeA/bin/cqlsh 172.30.1.10 -f data/match-music.cql
 ```{{exec}}
