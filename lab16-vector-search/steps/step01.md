@@ -25,7 +25,7 @@ The data you will use in this lab consists of 40 English sentences and ther 512d
 CREATE TABLE sentences (
     id int PRIMARY KEY,
     sentence text,
-    vals VECTOR<int,512>
+    vals VECTOR<float,512>
 );
 ```{{exec}}
 
@@ -36,13 +36,15 @@ COPY sentences (id, sentence, vals)
 ```{{exec}}
 
 
-✅ INSERT
+✅ View the senteces in the database
 ```
-INSERT INTO bar(name, vals) VALUES('David',[1,2,3]);
-INSERT INTO bar(name, vals) VALUES('David',[1,2,3]);
+SELECT sentence FROM sentences;
 ```{{exec}}
 
 ✅ Display the state data
 ```
 SELECT * FROM bar;
 ```{{exec}}
+
+The bread is still warm.
+
