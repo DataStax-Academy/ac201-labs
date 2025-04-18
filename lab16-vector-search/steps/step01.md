@@ -77,10 +77,8 @@ exit
 ```{{exec}}
 
 The format of the `SELECT` statements to do the ANN search is:
-[subs="quotes"]
-----
-`SELECT sentence FROM vectors.sentences ORDER BY vals ANN OF [... *EMBEDDING* ...] limit 5`
-----
+
+`SELECT sentence FROM vectors.sentences ORDER BY vals ANN OF` **EMBEDDING** `limit 5`
 
 ✅ Find matches for "The stew was rich and comforting."
 ```
