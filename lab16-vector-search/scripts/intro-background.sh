@@ -124,7 +124,7 @@ mkdir -p $HOME_DIR/data
 
 mv /assets/vectors.csv         $HOME_DIR/data/vectors.csv
 mv /assets/match-food.cql      $HOME_DIR/data/match-food.cql
-mv /assets/match-geography.cql $HOME_DIR/data/match-geography.cql
+mv /assets/match-music.cql $HOME_DIR/data/match-music.cql
 
 sudo chown -R cassandra-user:cassandra $HOME_DIR
 
