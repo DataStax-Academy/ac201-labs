@@ -6,7 +6,7 @@ The embeddings have 512 dimensions and are to large examine in this lab.
 Therefore both the embeddings that you will indexe in the database and the ones you will use to query for matches have been pre-generated and stored in file.
 
 If you would like to explore embeddings in detail, check out this 
-![colab](https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/hub/tutorials/semantic_similarity_with_tf_hub_universal_encoder.ipynb#scrollTo=zwty8Z6mAkdV)
+[colab](https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/hub/tutorials/semantic_similarity_with_tf_hub_universal_encoder.ipynb#scrollTo=zwty8Z6mAkdV)
 from Google.
 
 Start by connecting to the database using `cqlsh`.
@@ -63,7 +63,7 @@ COPY sentences (id, sentence, vals)
 
 Take a look at the sentences in the database.
 The embeddings are too large so the `SELECT` statement only retrives the sentences.
-There are 40 sentences 10 each about food, bicycling, music, and geography.
+There are 40 sentences, 10 each about food, bicycling, music, and geography.
 Since the table has a single column primary key, the results of your query will not be grouped.
 
 ✅ View the senteces in the database
@@ -80,14 +80,27 @@ The format of the `SELECT` statements to do the ANN search is:
 
 `SELECT sentence FROM vectors.sentences ORDER BY vals ANN OF` **EMBEDDING** `limit 5`
 
+The queries, including the embedding to match, are in `data/match-food.cql` and `data/match-music.cql`.
+Run the two queries below and see the ANN results.
+
 ✅ Find matches for "The stew was rich and comforting."
 ```
 nodeA/bin/cqlsh 172.30.1.10 -f data/match-food.cql
 ```{{exec}}
+
+![matches](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab16/the-stew.png)
+
+All of the matches are food related and the first three relate to the *state* of the food or the author's perception of it. 
+They look like pretty good matches from out limited set of embeddings.
 
 ✅ Find matches for "The guitar sounds a little flat." 
 ```
 nodeA/bin/cqlsh 172.30.1.10 -f data/match-music.cql
 ```{{exec}}
 
+![matches](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab16/the-guitar.png)
 
+The first match is pretty strong and shares the word *guitar*.
+The second is also music-related, but the sentence abou cycling doesn't seem to fit.
+The last two are about music so they aren't bad.
+Remember, you have a universe of only 40 embeddings so matches may be a bit tenuous.
