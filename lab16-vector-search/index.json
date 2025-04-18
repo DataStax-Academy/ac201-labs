@@ -16,7 +16,7 @@
         "host01": [
           {"file": "vectors.csv", "target": "/assets", "chmod": "+r"},
           {"file": "match-food.cql", "target": "/assets", "chmod": "+r"},
-          {"file": "match-geography.cql", "target": "/assets", "chmod": "+r"}
+          {"file": "match-music.cql", "target": "/assets", "chmod": "+r"}
         ]
       },
       "intro": {

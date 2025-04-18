@@ -31,9 +31,9 @@ CREATE TABLE sentences (
 
 ✅ Create the index
 ```
-CREATE INDEX sentences_idx ON sentences(vals) USING 'sai';
+CREATE INDEX sentences_idx 
+  ON sentences(vals) USING 'sai';
 ```{{exec}}
-
 
 
 ✅ Load the vector data
