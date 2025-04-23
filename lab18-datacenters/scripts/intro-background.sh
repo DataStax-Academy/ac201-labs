@@ -52,6 +52,9 @@ su - cassandra-user -c '
   mv apache-cassandra-5.0.4 nodeA
   cp -r nodeA nodeB
   cp -r nodeA nodeC
+  cp -r nodeA nodeD
+  cp -r nodeA nodeE
+  cp -r nodeA nodeF
 '
 #
 # configure the yaml files
