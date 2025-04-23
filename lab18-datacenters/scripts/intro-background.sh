@@ -157,8 +157,8 @@ chown -R cassandra-user:cassandra $HOME_DIR
 #
 
 su - cassandra-user -c '~/nodeA/bin/cassandra -R > ~/nodeA/logs/cassandra.log 2>&1 &'
-su - cassandra-user -c '~/nodeB/bin/cassandra -R > ~/nodeB/logs/cassandra.log 2>&1 &'
-su - cassandra-user -c '~/nodeC/bin/cassandra -R > ~/nodeC/logs/cassandra.log 2>&1 &'
+# su - cassandra-user -c '~/nodeB/bin/cassandra -R > ~/nodeB/logs/cassandra.log 2>&1 &'
+# su - cassandra-user -c '~/nodeC/bin/cassandra -R > ~/nodeC/logs/cassandra.log 2>&1 &'
 su - cassandra-user -c '~/nodeD/bin/cassandra -R > ~/nodeA/logs/cassandra.log 2>&1 &'
-su - cassandra-user -c '~/nodeE/bin/cassandra -R > ~/nodeB/logs/cassandra.log 2>&1 &'
-su - cassandra-user -c '~/nodeF/bin/cassandra -R > ~/nodeC/logs/cassandra.log 2>&1 &'
+# su - cassandra-user -c '~/nodeE/bin/cassandra -R > ~/nodeB/logs/cassandra.log 2>&1 &'
+# su - cassandra-user -c '~/nodeF/bin/cassandra -R > ~/nodeC/logs/cassandra.log 2>&1 &'
