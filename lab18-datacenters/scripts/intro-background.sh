@@ -68,8 +68,8 @@ declare -A IPS=(
   [nodeB]=172.30.1.11
   [nodeC]=172.30.1.12
   [nodeD]=172.30.1.13
-  [nodeE]=172.30.1.11
-  [nodeF]=172.30.1.12
+  [nodeE]=172.30.1.14
+  [nodeF]=172.30.1.15
 )
 
 declare -A STORAGE_PORTS=(
