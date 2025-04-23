@@ -1,7 +1,7 @@
 {
     "private": false,
     "title": "AC201 Lab 16: Vector Search",
-    "description": "AAA.",
+    "description": "Upload some vector embeddings and do an ANN search.",
     
     "difficulty": "Beginner",
     "time": "15 minutes",
