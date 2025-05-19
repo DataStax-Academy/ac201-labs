@@ -1,6 +1,6 @@
 {
     "private": false,
-    "title": "AC201 Lab 16: Vector Search",
+    "title": "AC201 Lab 11: Vector Search",
     "description": "Upload some vector embeddings and do an ANN search.",
     
     "difficulty": "Beginner",

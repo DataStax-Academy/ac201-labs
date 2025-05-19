@@ -1,6 +1,6 @@
 {
     "private": false,
-    "title": "AC201 Lab 12: Hinted handoff",
+    "title": "AC201 Lab 13: Hinted handoff",
     "description": "Read and write data when a node is down",
     "difficulty": "Beginner",
     "time": "10 minutes",
