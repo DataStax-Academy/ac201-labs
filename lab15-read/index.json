@@ -1,6 +1,6 @@
 {
     "private": false,
-    "title": "AC201 Lab 14: Reads",
+    "title": "AC201 Lab 15: Reads",
     "description": "Explore the read path in Cassandra.",
     "difficulty": "Beginner",
     "time": "15 minutes",
