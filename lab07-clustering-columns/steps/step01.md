@@ -1,5 +1,5 @@
 In this step, you will build a table with a partition key column and two clustering columns.
-Since this table has multiple clustering columns, partitions may contain more than one row.
+Since this table has clustering columns, partitions may contain more than one row.
 
 ✅ Start by connecting to the cluster with `cqlsh` 
 ```
@@ -81,7 +81,7 @@ SELECT * FROM restaurants WHERE cuisine='seafood' LIMIT 2;
 
 ✅ Find all the Chinese restaurants with 2, 3 or 4 ratings
 ```
-SELECT * FROM restaurants WHERE cuisine='seafood' AND rating >= 1 AND rating <= 4 ;
+SELECT * FROM restaurants WHERE cuisine='chinese' AND rating >= 2 AND rating <= 4 ;
 ```{{exec}}
 
 
