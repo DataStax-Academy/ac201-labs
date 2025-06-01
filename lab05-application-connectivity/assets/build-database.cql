@@ -1,5 +1,3 @@
-~/nodeA/bin/cqlsh 172.30.1.10
-
 CREATE KEYSPACE world WITH replication = {
   'class':'NetworkTopologyStrategy',
   'datacenter1':1

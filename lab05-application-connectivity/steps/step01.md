@@ -1,4 +1,4 @@
-In this step, you will build a table and access it from Java and Python apps. 
+In this step, you will exequte a CQL script to create and populate a table.
 
 ✅ Use the **Editor** tab to open a Theia window and examine the CQL file: `/filesystem/home/cassandra-user/build-database.cql`
 
@@ -7,7 +7,7 @@ Next, there are commands to create and populate a table of countries.
 
 Switch back to **Tab 1**
 
-✅ Use `cqlsh` to exectue the CQL file and build a database
+✅ Use `cqlsh` to execute the CQL file and build a database
 ```
 nodeA/bin/cqlsh 172.30.1.10 -f build-database.cql
 ```{{exec}}
@@ -16,7 +16,7 @@ Verify that the table has been created and that data has been loaded.
 
 ✅ Use `cqlsh` to retrieve countries from the database.
 ```
-/home/cassandra-user/nodeA/bin/cqlsh 172.30.1.10 9042 -e "SELECT * FROM world.countries;"
+nodeA/bin/cqlsh 172.30.1.10 9042 -e "SELECT * FROM world.countries;"
 ```{{exec}}
 
 You should see a list of countries and the continents they are on.
