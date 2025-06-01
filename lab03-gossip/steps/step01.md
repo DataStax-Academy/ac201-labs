@@ -16,7 +16,7 @@ You should see gossip information for all three servers in the cluster.
 
 | Property | Description |
 | ----------- | ----------- |
-| genertion | timestamp |
+| generation | timestamp |
 | heartbeat | increasing counter |
 | LOAD | data on node in bytes |
 | SCHEMA | schema version |
