@@ -22,7 +22,7 @@ use world;
 ```{{exec}}
 
 Next you will create a table.
-The table will contain country names and the continents there they are located.
+The table will contain country names and the continents where they are located.
 
 ✅ Create the table
 ```
@@ -33,7 +33,7 @@ CREATE TABLE countries (
 );
 ```{{exec}}
 
-✅ Create the table
+✅ Insert the country data
 ```
 INSERT INTO countries (id, continent, country) VALUES (1, 'Africa', 'Nigeria');
 INSERT INTO countries (id, continent, country) VALUES (2, 'Africa', 'South Africa');
