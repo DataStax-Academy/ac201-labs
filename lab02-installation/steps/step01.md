@@ -7,7 +7,7 @@ Cassandra 5 requires at least JDK 11 so first we will verify that  we have the r
 java -version
 ```{{exec}}
 
-Verify that the version is 11.0.23
+Verify that the version is 11
 
 While connected through the terminal, you should verify the user account you are logged in with.
 
