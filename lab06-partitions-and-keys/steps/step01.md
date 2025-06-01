@@ -1,10 +1,10 @@
 In this step, you will build a table with a partition key column and two clustering columns.
-Clustering columns in determine the order of rows within a partition. 
+Clustering columns determine the order of rows within a partition. 
 By defining clustering columns in your table schema, you can control how data is sorted and retrieved within each partition, enabling more advanced and efficient queries.
 
 ✅ Start by connecting to the cluster with `cqlsh` 
 ```
- /home/cassandra-user/nodeA/bin/cqlsh 172.30.1.10
+nodeA/bin/cqlsh 172.30.1.10
 ```{{exec}}
 
 You will create the table in the 'dining' keyspace.
@@ -70,7 +70,10 @@ You should see the restaurants grouped by `cuisine`.
 SELECT * FROM restaurants;
 ```{{exec}}
 
-You can use `cuisine` in 'WHERE' clauses because it is the partition key.
+**Note:** In production clusters, `SELECTS` without `WHERE` clauses will result in reading data from all partitions and multiple nodes. 
+Only use these queries on small datasets.
+
+You can use `cuisine` in the `WHERE` clauses because it is the partition key.
 
 ✅ Find all the seafood restaurants
 ```
