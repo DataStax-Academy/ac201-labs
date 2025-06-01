@@ -21,6 +21,6 @@ cd /home/cassandra-user/python-app
 python /home/cassandra-user/python-app/CassandraClient.py
 ```{{exec}}
 
-You should see the list of coiuntries.
+You should see the list of countries.
 
 ![Java client](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab04/countries-python.jpg)

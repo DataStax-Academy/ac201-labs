@@ -11,7 +11,7 @@ You should see the dependency for the DataStax oss Cassandra driver, version 4.1
 
 Use the **Editor** tab to open a Theia window and examine the Java source file: `/filesystem/home/cassandra-user/java-app/src/main/java/som.example/CassandraClient.java`
 
-You will see the `CQLSession` builder defining the IP address, keyspace and table name.
+You will see the `CQLSession` builder defining the IP address and keyspace.
 Next you will see the query: `SELECT id, continent, country FROM countries`.
 After executing the query, the application iterates through the results and displays them.
 
