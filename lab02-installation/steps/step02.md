@@ -1,10 +1,11 @@
-In this step, you will install Cassandra. There are several methods to achieve this, including:
+In this step, you will install Cassandra. 
+There are several methods to achieve this, including:
 
 - Linux package managers
 - Docker
 - Tarball
 
-**Note:** You could even skip the install altogether and use [Datastax AstraDB](https://www.datastax.com/products/datastax-astra) - *Cassandra-as-a-service* in the cloud! 
+**Note:** You could even skip the install altogether and use [Datastax Astra DB](https://www.datastax.com/products/datastax-astra) - a serverless database built on Cassandra in the cloud! 
 
 In this lab we will install Cassandra from a Tarball.
 
