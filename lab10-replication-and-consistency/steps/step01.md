@@ -36,7 +36,7 @@ Once all three servers are running you will open a new tab.
 ✅ Follow these instructions to open a new Tab
 
 1. Click on the **+** icon (next to **Tab1**) to create a new tab.
-2. lick on **Tab2** to switch tabs.
+2. Click on **Tab2** to switch tabs.
 
 ✅ Change the user in **Tab2** to `cassandra-user`
 ```
