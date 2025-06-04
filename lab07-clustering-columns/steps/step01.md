@@ -77,16 +77,16 @@ SELECT * FROM restaurants WHERE cuisine='pizza'
 
 ✅ Find the two lowest rated the seafood restaurants
 ```
-SELECT * FROM restaurants WHERE cuisine='seafood' 
-  LIMIT 2;
+SELECT * FROM restaurants 
+  WHERE cuisine='seafood' LIMIT 2;
 ```{{exec}}
 
-✅ Find all the Chinese restaurants with 2, 3 or 4 ratings
+✅ Find all the Chinese restaurants with 2, 3, or 4 ratings
 ```
 SELECT * FROM restaurants 
   WHERE cuisine='chinese' 
     AND rating >= 2 
-    AND rating <= 4 ;
+    AND rating <= 4;
 ```{{exec}}
 
 
