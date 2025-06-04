@@ -1,6 +1,6 @@
 In this step, you will execute a write with one server shut down. 
 
-There are the IP/Ports for each server.
+These are the IP/Port pairs for each server.
 
 | Server | IP | Port |
 | ----------- | ----------- | ----------- |

@@ -6,14 +6,14 @@ Next, you will connect to nodeC and see if the hinted handoff propogated the new
 nodeC/bin/cassandra -R > nodeC/logs/cassandra.log 2>&1 &
 ```{{exec}}
 
-Use `watch` to run `nodetool` until nodeC is in the `UN` state.
+Use `watch` to run `nodetool` until nodeC has started.
 
 ✅ Wait for nodeC to start
 ```
 watch -n 5 nodeA/bin/nodetool status
 ```{{exec}}
 
-✅ Once nodeC has started use Ctrl-C stop the `watch`
+✅ Once nodeC is in the `UN` state. use Ctrl-C stop the `watch`
 ```
 Ctrl-C
 ```{{exec interrupt}}
@@ -28,7 +28,7 @@ fuser -k 9043/tcp
 ```{{exec interrupt}}
 
 Use `nodetool` to verify that nodeC (172.30.1.12) is the only node running.
-Since nodeA is shutting down, you will run `nodetool` from nodeC's homw directory.
+Since nodeA is shutting down, you will run `nodetool` from nodeC's home directory.
 
 ✅ Wait for nodeA and nodeB to shut down
 ```
