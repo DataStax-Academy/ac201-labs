@@ -15,7 +15,7 @@ watch -n 5 nodeA/bin/nodetool status
 
 ✅ Once nodeC is in the `UN` state. use Ctrl-C stop the `watch`
 ```
-Ctrl-C
+#Ctrl-C
 ```{{exec interrupt}}
 
 The next step is to shut down nodeA and nodeB. 
@@ -41,7 +41,7 @@ You should see that only nodeC is in the `UN` state.
 
 ✅ Once nodeA and nodeB have shut down use Ctrl-C stop the `watch`
 ```
-Ctrl-C
+#Ctrl-C
 ```{{exec interrupt}}
 
 
