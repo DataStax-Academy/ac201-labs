@@ -20,7 +20,7 @@ CREATE KEYSPACE dining WITH replication = {
 USE dining;
 ```{{exec}}
 
-The 'restaurants' table will be partitioned or grouped by `cuisine`. 
+The 'restaurants' table will be partitioned, or grouped, by `cuisine`. 
 Cassandra will use the `rating` and `cost` columns to order the rows in the partition.
 Values for `rating` and `cost` are 1-5, with 5 being the highest.
 The `name` column is primarily for uniqueness.
@@ -66,9 +66,9 @@ INSERT INTO restaurants (name, cuisine, rating, cost, city)
 You should see the restaurants grouped by `cuisine`.
 In addition to the grouping, the restaurants are sorted by `rating` and then `name`.
 
-Now you can query on the clustering columns and sice they are ordered, you can do *order* or *range* queries.
+Now you can query on the clustering columns and since they are ordered, you can do *order* or *range* queries.
 
-✅ Find the least expensive sushi restaurant with a ratig of 5
+✅ Find the least expensive sushi restaurant with a rating of 5
 ```
  SELECT * FROM restaurants 
    WHERE cuisine='sushi' AND rating = 5  
