@@ -63,7 +63,7 @@ nodeA/bin/cqlsh 172.30.1.10 \
 ![updated row](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab14/updated.jpg)
 
 The query returned the expected values.
-The `name` (`Luka Quinn`) came from the initial in sert and iss in the older SSTable file: `nb-1-big-Data.db`.
+The `name` (`Luka Quinn`) came from the initial insert and is in the older SSTable file: `nb-1-big-Data.db`.
 The `status` (`gold`)  came from the first update and is in the newer SSTable file `nb-2-big-Data.db`.
 The `email` (`lquinn@example.com`) came from the most recent update and was still in the memtable.
 Cassandra had to assemble the current values from the two SSTables and the memtable.
