@@ -1,5 +1,5 @@
 In this step, you will build a table and load data.
-You will use the `COPY FROM` command to puplate the table from a CSV file.
+You will use the `COPY FROM` command to populate the table from a CSV file.
 
 ✅ Use the **Editor** tab to open a Theia window and examine `states.csv` in `/filesystem/home/cassandra-user/data/`
 
