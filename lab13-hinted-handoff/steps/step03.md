@@ -47,7 +47,7 @@ You should see that only nodeC is in the `UN` state.
 
 ✅ Connnect to nodeC with `cqlsh`
 ```
-~/nodeC/bin/cqlsh 172.30.1.12 9044
+nodeC/bin/cqlsh 172.30.1.12 9044
 ```{{exec}}
 
 ✅ Execute a query to find the Corvette by id (1008)

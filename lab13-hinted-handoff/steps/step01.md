@@ -2,7 +2,7 @@ In this step, you will create and populate a table
 
 ✅ Use `nodetool` to verify that the cluster is running.
 ```
-~/nodeA/bin/nodetool status
+nodeA/bin/nodetool status
 ```{{exec}}
 
 You should see all three servers running in the `UN` state.
