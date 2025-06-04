@@ -81,6 +81,14 @@ SELECT * FROM restaurants
   WHERE cuisine='seafood' LIMIT 2;
 ```{{exec}}
 
+✅ Find the best seafood restaurants in Seattle
+```
+SELECT * FROM restaurants 
+  WHERE city='Seattle' 
+    AND cuisine='seafood' 
+    AND rating=5;
+```{{exec}}
+
 ✅ Find all the Chinese restaurants with 2, 3, or 4 ratings
 ```
 SELECT * FROM restaurants 
