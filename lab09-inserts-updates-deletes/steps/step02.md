@@ -1,7 +1,7 @@
 In this step you will perform use `DELETE` at different scopes
 
 ❗ <strong>Warning:</strong> 
-`DELETE` operations insert tombstones in the database and may have a negative impact on performance.
+`DELETE` operations insert tombstones in the database and may have a negative impact on performance when used indicriminately.
 
 ✅ Execute a query to retrieve all of the scores
 ```
@@ -22,11 +22,11 @@ DELETE score FROM scores
 SELECT * FROM scores  WHERE team = 'EP' AND player = 'Rick';
 ```{{exec}}
 
-There is still an entry for Rick for week 2 but the score column now displays null/
+There is still an entry for Rick for week 2 but the score column now displays `null`.
 
 ![deleted score](https://killrcoda-file-store.s3.us-east-1.amazonaws.com/AC201/Lab09/delete-score-only.jpg)
 
-You can delete an entire row by specifying the its full *primary key* in the `WHERE` clause.
+You can delete an entire row by specifying its full *primary key* in the `WHERE` clause.
 You can also delete a whole partition by specifying just the *partition key* in the `WHERE` clause.
 
 ✅ Delete the entire EP team

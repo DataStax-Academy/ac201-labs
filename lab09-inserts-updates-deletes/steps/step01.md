@@ -2,7 +2,7 @@ In this step, you will use `INSERT`, `UPDATE`, and upserts.
 
 ✅ Start by connecting to the cluster with `cqlsh` 
 ```
- /home/cassandra-user/nodeA/bin/cqlsh 172.30.1.10
+nodeA/bin/cqlsh 172.30.1.10
 ```{{exec}}
 
 You will create a table in the 'league' keyspace.
@@ -20,14 +20,14 @@ CREATE KEYSPACE league WITH replication = {
 USE league;
 ```{{exec}}
 
-This table track scores for a sports league.
+This table tracks scores for a sports league.
 There is a partition for each team. 
 The player (first name) and week (1-8) are clustering columns.
 Score is an int between 0-450.
 
-<strong>Note:</strong> You cannot constraint the column values in Cassandra. 
+<strong>Note:</strong> You cannot constrain the column values in Cassandra. 
 Even though scores should be between 0 and 450, Cassandra will not enforce the limits.
-Likewise only primary key columns are required
+Likewise only primary key columns are required.
 
 
 ✅ Create the table
@@ -74,9 +74,9 @@ SELECT * FROM scores;
 Take a look at the results. 
 There is only one score for Dave.
 There was an error in the week 2 insert statement. 
-The week was set to `1` instead of '2'.
+The week was set to `1` instead of `2`.
 This is an example of an *upsert* in Cassandra. 
-Cassandra did not reject the insert even though the primary key was lready in the database!
+Cassandra did not reject the insert even though the primary key was already in the database!
 
 `INSERT INTO scores (team, player, week, score)`
 `  VALUES ('SA', 'Dave', 1, 442);`
