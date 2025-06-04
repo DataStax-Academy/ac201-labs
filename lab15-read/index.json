@@ -7,7 +7,7 @@
     "details": {
       "steps": [
         {
-          "title": "Step 1: Create, database, perform writes and flush the memtable",
+          "title": "Step 1: Create a table, perform writes and flush the memtable",
           "text": "steps/step01.md"
         },
         {
