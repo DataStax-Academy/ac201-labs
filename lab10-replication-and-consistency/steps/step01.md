@@ -34,7 +34,9 @@ Wait until all three servers are running in the Up and Normal (`UN`) state.
 Once all three servers are running you will open a new tab.
 
 ✅ Open a new Tab
+
 Click on the **+** icon (next to **Tab1**) to create a new tab.
+
 Next, click on **Tab2** to switch tabs.
 
 ✅ Change the user in **Tab2** to `cassandra-user`
