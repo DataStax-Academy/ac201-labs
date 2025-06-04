@@ -84,7 +84,9 @@ SELECT * FROM restaurants
 ✅ Find all the Chinese restaurants with 2, 3, or 4 ratings
 ```
 SELECT * FROM restaurants 
-  WHERE cuisine='chinese';
+  WHERE cuisine='chinese'
+    AND rating >= 2
+    AND rating <= 4;
 ```{{exec}}
 
 
