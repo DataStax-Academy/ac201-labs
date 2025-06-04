@@ -2,7 +2,7 @@ In this step, you will build a table with a partition key column and three clust
 
 ✅ Start by connecting to the cluster with `cqlsh` 
 ```
- /home/cassandra-user/nodeA/bin/cqlsh 172.30.1.10
+nodeA/bin/cqlsh 172.30.1.10
 ```{{exec}}
 
 You will create the table in the 'dining' keyspace.
