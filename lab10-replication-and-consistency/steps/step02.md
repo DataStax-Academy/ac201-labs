@@ -1,8 +1,8 @@
 In this step you will shut down some of the servers in the cluster and observe the effect on reads and writes at different consistency levels.
 
 Remember consistency level is the number of nodes that need to acknowlege (ACK) a request for it to succeed.
-Cassandra will *always* attempt to write to the number of nodes sepcified in the *replication factor*.
-Cassandra will *only* attempt to read from the numnber of nodes required to satisfy the *consistency leel*.
+Cassandra will *always* attempt to write to the number of nodes specified in the *replication factor*.
+Cassandra will *only* attempt to read from the number of nodes required to satisfy the *consistency level*.
 
 ✅ Use the `CONSISTENCY` command to determine the current consistency level
 ```
@@ -18,8 +18,8 @@ Next, you are going to insert some data into the table at these consistency leve
 | Consistency Level | Description |
 | ----------- | ----------- |
 | `ONE` | 1 node |
-| 'LOCAL_QUORUM' | Equivalent to `TWO` with replication factor `3` |
-| 'ALL' | Equivalent to `THREE` with replication factor `3` |
+| `LOCAL_QUORUM` | Equivalent to `TWO` with replication factor `3` |
+| ALL` | Equivalent to `THREE` with replication factor `3` |
 
 ✅ Insert the data
 ```
@@ -34,7 +34,7 @@ INSERT INTO customers( id, name ) VALUES(3, 'Charlie' );
 ```{{exec}}
 
 The current consistency level is `ALL` (you set it before you inserted Charlie).
-Try retriving all the rows from the table.
+Try retrieving all the rows from the table.
 
 ✅ Insert the data
 ```
@@ -51,7 +51,7 @@ Click on the **+** icon (next to **Tab2**) to create a new tab.
 Next, click on **Tab3** to switch tabs.
 
 Because they all the servers are running on the same virtual machine, you will need to find their process ids (PID). 
-The Linux `fuser -k` command returns kills the process that *owns* a specific port/protocol. 
+The Linux `fuser -k` command kills the process that *owns* a specific port/protocol. 
 
 ✅  Kill nodeB(9043) and nodeC(9044) 
 ```
@@ -78,13 +78,13 @@ You should still be in the `cqlsh` shell.
 
 You are going try to insert three new customers into the table at the consistency levels you used before.
 
-✅ Insert Tal and consistency level `ONE`
+✅ Insert Tal at consistency level `ONE`
 ```
 CONSISTENCY ONE;
 INSERT INTO customers( id, name ) VALUES(4, 'Tal' );
 ```{{exec}}
 
-This `INSERT` succeded because there is one node (nodaA) still running. 
+This `INSERT` succeded because there is one node (nodeA) still running. 
 Cassandra tried to satisfy the replication factor and write to all three nodes, but only one node had to *ACK* to for the write to succeed.
 
 ✅ Insert Ariel at consistency level `LOCAL_QUORUM`
@@ -140,7 +140,7 @@ Click on the **Tab3**
 ✅ Start nodeB and nodeC as `cassandra-user`
 ```
 su - cassandra-user -c 'nodeB/bin/cassandra > /dev/null 2>&1 &'
-su - cassandra-user -c 'nodeB/bin/cassandra > /dev/null 2>&1 &'
+su - cassandra-user -c 'nodeC/bin/cassandra > /dev/null 2>&1 &'
 ```{{exec}}
 
 Wait for the servers to start.
