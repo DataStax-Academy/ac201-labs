@@ -27,7 +27,7 @@ watch -n 5 nodeA/bin/nodetool status
 
 ✅ Once nodeC has shut down use Ctrl-C stop the `watch`
 ```
-Ctrl-C
+#Ctrl-C
 ```{{exec interrupt}}
 
 ✅ Use `cqlsh` to re-connect to the database
