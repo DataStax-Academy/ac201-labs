@@ -1,6 +1,6 @@
 In this hands-on lab, you will:
 
-- Create table in a 3-node cluster
+- Create a table in a 3-node cluster
 - Write some data
 - Shut down nodeC
 - Write some more data
