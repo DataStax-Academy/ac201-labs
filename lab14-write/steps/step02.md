@@ -1,6 +1,6 @@
 In this step you will look at the `data` directories before and after flushing the memtable.
 
-Because you created the `cars` keyspace the `nodea/data/data` directory has a subdirectory the `cars` keyspace
+Because you created the `cars` keyspace the `nodeA/data/data` directory has a subdirectory for the `cars` keyspace.
 The `cars` directory has a subdirectory for the `inventory` table.
 
 ✅ View the `cars` directory
