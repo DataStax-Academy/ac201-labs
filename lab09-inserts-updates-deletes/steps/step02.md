@@ -1,7 +1,7 @@
 In this step you will perform use `DELETE` at different scopes
 
 ❗ <strong>Warning:</strong> 
-`DELETE` operations insert tombstones in the database and may have a negative impact on performance when used indicriminately.
+`DELETE` operations insert tombstones in the database and may have a negative impact on performance when used indiscriminately.
 
 ✅ Execute a query to retrieve all of the scores
 ```
