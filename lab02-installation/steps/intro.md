@@ -5,4 +5,5 @@ In this hands-on lab, you will:
 - Start Cassandra
 - Verify that Cassandra is up and running
 
-❗ <strong>Warning:</strong> Wait for the *Lab environment ready!* message before you click *START*
+>⚠️ **Warning:**
+>Wait for the *Lab environment ready!* message before you click *START*.
