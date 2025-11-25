@@ -8,4 +8,5 @@ In this hands-on lab, you will:
 - Shut down nodeA and nodeB
 - Verify that hinted handoff updated nodeC
 
-❗ <strong>Warning:</strong> Wait for the *Lab environment ready!* message before you click *START*
+>⚠️ **Warning:**
+>Wait for the *Lab environment ready!* message before you click *START*.
