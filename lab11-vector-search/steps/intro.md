@@ -6,4 +6,5 @@ In this hands-on lab, you will:
 
 **Info:** This lab may take up to 10 minutes to load!
 
->[!Note] Wait for the *Lab environment ready!* message before you click *START*
+>[!NOTE] 
+>Wait for the *Lab environment ready!* message before you click *START*
