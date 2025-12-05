@@ -5,4 +5,4 @@ In this hands-on lab, you will:
 - Perform Approximate Nearest Neighbor (ANN) searches
 
 >⚠️ **Warning:** 
->Wait for the *Lab environment ready!* message before you click *START*.<br><br>
+>Wait for the *Lab environment ready!* message before you click *START*.
